@@ -48,6 +48,7 @@
    `(default ((,class (:foreground "black" :background "white"))))
    `(cursor ((,class (:background "red"))))
    `(region ((,class (:background "khaki"))))
+   `(fringe ((,class (:inherit default))))
    `(outline-1 ((,class (:weight bold))))
    `(outline-2 ((,class (:inherit outline-1))))
    `(outline-3 ((,class (:inherit outline-1))))
@@ -57,8 +58,8 @@
    `(outline-7 ((,class (:inherit outline-1))))
    `(outline-8 ((,class (:inherit outline-1))))
    ;; Mode-line faces
-   `(mode-line ((,class (:foreground "black" :background "goldenrod1"))))
-   `(mode-line-inactive ((,class (:foreground "black" :background "goldenrod3"))))
+   `(mode-line ((,class (:box "black"))))
+   `(mode-line-inactive ((,class (:background "gray95" :box "gray50"))))
    ;; Font lock faces
    `(font-lock-keyword-face ((t nil)))
    `(font-lock-function-name-face ((t nil)))
@@ -68,9 +69,20 @@
    `(font-lock-constant-face ((t nil)))
    `(font-lock-type-face ((t nil)))
    `(font-lock-preprocessor-face ((t nil)))
-   `(font-lock-comment-face ((t nil)))
+   `(font-lock-comment-face ((,class (:foreground "grey50" :slant italic))))
    `(font-lock-string-face ((t nil)))
-   `(font-lock-doc-face ((t nil)))
+   `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
+   `(font-lock-regexp-grouping-backslash ((t nil)))
+   `(font-lock-regexp-grouping-construct ((t nil)))
+   ;; show-paren
+   `(show-paren-match ((,class (:background "turquoise"))))
+   `(show-paren-match-expression ((,class (:background "turquoise"))))
+   `(show-paren-mismatch ((,class (:foreground "white" :background "purple"))))
+   ;; Line numbers
+   `(line-number ((,class (:foreground "gray75"))))
+   `(line-number-current-line ((,class (:foreground "black" :weight bold))))
+   ;; hl-line
+   `(hl-line ((,class (:background "gray95"))))
    ;; Shell script faces
    `(sh-heredoc ((t nil)))
    ;; Org faces
@@ -78,12 +90,16 @@
    `(org-block-begin-line ((,class (:inherit shadow))))
    `(org-block-end-line ((,class (:inherit org-block-begin-line))))
    `(org-code ((t nil)))
-   `(org-headline-done ((t nil)))
    `(org-document-title ((t nil)))
    `(org-drawer ((t nil)))
    `(org-link ((,class (:inherit link))))
    `(org-date ((,class (:inherit (fixed-pitch link)))))
    `(org-meta-line ((,class (:inherit org-document-info-keyword))))
+   `(org-headline-todo ((,class (:weight normal))))
+   `(org-headline-done ((,class (:foreground "grey75" :weight normal :strike-through t :slant italic))))
+   ;; Dired
+   `(dired-directory ((,class (:foreground "blue"))))
+   `(dired-symlink ((,class (:foreground "magenta"))))
    ;; Terraform faces
    `(terraform--resource-name-face ((t nil)))
    `(terraform--resource-type-face ((t nil)))))
