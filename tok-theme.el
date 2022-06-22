@@ -59,7 +59,7 @@
    ;; Mode-line faces
    `(mode-line ((,class (:foreground "black" :background "goldenrod1"))))
    `(mode-line-inactive ((,class (:foreground "black" :background "goldenrod3"))))
-   ;; ;; Font lock faces
+   ;; Font lock faces
    `(font-lock-keyword-face ((t nil)))
    `(font-lock-function-name-face ((t nil)))
    `(font-lock-warning-face ((t nil)))
@@ -71,20 +71,20 @@
    `(font-lock-comment-face ((t nil)))
    `(font-lock-string-face ((t nil)))
    `(font-lock-doc-face ((t nil)))
-   ;; ;; Shell script faces
+   ;; Shell script faces
    `(sh-heredoc ((t nil)))
-   ;; ;; Org faces
-   `(org-block ((,class nil)))
+   ;; Org faces
+   `(org-block ((t nil)))
    `(org-block-begin-line ((,class (:inherit shadow))))
    `(org-block-end-line ((,class (:inherit org-block-begin-line))))
-   `(org-code ((,class nil)))
-   `(org-headline-done ((,class nil)))
-   `(org-document-title ((,class nil)))
-   `(org-drawer ((,class nil)))
+   `(org-code ((t nil)))
+   `(org-headline-done ((t nil)))
+   `(org-document-title ((t nil)))
+   `(org-drawer ((t nil)))
    `(org-link ((,class (:inherit link))))
    `(org-date ((,class (:inherit (fixed-pitch link)))))
    `(org-meta-line ((,class (:inherit org-document-info-keyword))))
-   ;; ;; Terraform faces
+   ;; Terraform faces
    `(terraform--resource-name-face ((t nil)))
    `(terraform--resource-type-face ((t nil)))))
 
