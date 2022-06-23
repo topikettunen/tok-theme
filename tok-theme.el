@@ -1,4 +1,4 @@
-;;; tok-theme.el --- Minimal theme with dark and yellow color scheme  -*- lexical-binding: t; -*-
+;;; tok-theme.el --- Simple, brutalistic and minimal Emacs theme  -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
 ;; URL: https://github.com/topikettunen/tok-theme
@@ -34,7 +34,7 @@
 
 ;;; Commentary:
 
-;; Tok is a simple and minimal Emacs theme with personal preferences.
+;; Tok is a simple, brutalistic and minimal Emacs theme.
 
 ;;; Code:
 
@@ -79,8 +79,8 @@
    `(show-paren-match-expression ((,class (:background "turquoise"))))
    `(show-paren-mismatch ((,class (:foreground "white" :background "purple"))))
    ;; Line numbers
-   `(line-number ((,class (:foreground "gray75"))))
-   `(line-number-current-line ((,class (:foreground "black" :weight bold))))
+   `(line-number ((,class (:inherit (shadow default)))))
+   `(line-number-current-line ((,class (:inherit line-number))))
    ;; hl-line
    `(hl-line ((,class (:background "gray95"))))
    ;; Shell script faces
