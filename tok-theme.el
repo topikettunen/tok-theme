@@ -44,23 +44,27 @@
 (let ((class '((class color) (min-colors 89))))
   (custom-theme-set-faces
    'tok
-   ;; Basic faces
+   ;; Basic
    `(default ((,class (:foreground "black" :background "white"))))
    `(cursor ((,class (:background "red"))))
    `(region ((,class (:background "khaki"))))
    `(fringe ((,class (:inherit default))))
-   `(outline-1 ((,class (:weight bold))))
-   `(outline-2 ((,class (:inherit outline-1))))
-   `(outline-3 ((,class (:inherit outline-1))))
-   `(outline-4 ((,class (:inherit outline-1))))
-   `(outline-5 ((,class (:inherit outline-1))))
-   `(outline-6 ((,class (:inherit outline-1))))
-   `(outline-7 ((,class (:inherit outline-1))))
-   `(outline-8 ((,class (:inherit outline-1))))
-   ;; Mode-line faces
+   ;; Outline mode
+   `(outline-1 ((,class (:weight bold :height 1.3))))
+   `(outline-2 ((,class (:weight bold :height 1.15))))
+   `(outline-3 ((,class (:weight bold :height 1.1))))
+   `(outline-4 ((,class (:weight bold))))
+   `(outline-5 ((,class (:weight bold))))
+   `(outline-6 ((,class (:weight bold))))
+   `(outline-7 ((,class (:weight bold))))
+   `(outline-8 ((,class (:weight bold))))
+   ;; Mode-line
    `(mode-line ((,class (:box "black"))))
+   (when (>= emacs-major-version 29)
+     `(mode-line-active ((,class (:inherit mode-line)))))
    `(mode-line-inactive ((,class (:background "gray95" :box "gray50"))))
-   ;; Font lock faces
+   `(mode-line-buffer-id ((,class (:weight bold))))
+   ;; Font lock
    `(font-lock-keyword-face ((t nil)))
    `(font-lock-function-name-face ((t nil)))
    `(font-lock-warning-face ((t nil)))
@@ -83,9 +87,9 @@
    `(line-number-current-line ((,class (:inherit line-number))))
    ;; hl-line
    `(hl-line ((,class (:background "gray95"))))
-   ;; Shell script faces
+   ;; Shell script
    `(sh-heredoc ((t nil)))
-   ;; Org faces
+   ;; org-mode
    `(org-block ((t nil)))
    `(org-block-begin-line ((,class (:inherit shadow))))
    `(org-block-end-line ((,class (:inherit org-block-begin-line))))
@@ -97,14 +101,30 @@
    `(org-meta-line ((,class (:inherit org-document-info-keyword))))
    `(org-headline-todo ((,class (:weight normal))))
    `(org-headline-done ((,class (:foreground "grey75" :weight normal :strike-through t :slant italic))))
+   `(org-level-1 ((,class (:inherit outline-1))))
+   `(org-level-2 ((,class (:inherit outline-2))))
+   `(org-level-3 ((,class (:inherit outline-3))))
+   `(org-level-4 ((,class (:inherit outline-4))))
+   `(org-level-5 ((,class (:inherit outline-5))))
+   `(org-level-6 ((,class (:inherit outline-6))))
+   `(org-level-7 ((,class (:inherit outline-7))))
+   `(org-level-8 ((,class (:inherit outline-8))))
+   `(org-special-keyword ((,class (:inherit shadow))))
    ;; Dired
    `(dired-directory ((,class (:foreground "blue"))))
    `(dired-symlink ((,class (:foreground "magenta"))))
    ;; ERC
    `(erc-timestamp-face ((,class (:weight unspecified :foreground unspecified))))
-   ;; Terraform faces
+   ;; Terraform
    `(terraform--resource-name-face ((t nil)))
-   `(terraform--resource-type-face ((t nil)))))
+   `(terraform--resource-type-face ((t nil)))
+   ;; Markdown
+   `(markdown-header-face-1 ((,class (:inherit outline-1))))
+   `(markdown-header-face-2 ((,class (:inherit outline-2))))
+   `(markdown-header-face-3 ((,class (:inherit outline-3))))
+   `(markdown-header-face-4 ((,class (:inherit outline-4))))
+   `(markdown-header-face-5 ((,class (:inherit outline-5))))
+   `(markdown-header-face-6 ((,class (:inherit outline-6))))))
 
 (provide-theme 'tok)
 
