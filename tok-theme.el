@@ -100,6 +100,8 @@
    ;; Dired
    `(dired-directory ((,class (:foreground "blue"))))
    `(dired-symlink ((,class (:foreground "magenta"))))
+   ;; ERC
+   `(erc-timestamp-face ((,class (:weight unspecified :foreground unspecified))))
    ;; Terraform faces
    `(terraform--resource-name-face ((t nil)))
    `(terraform--resource-type-face ((t nil)))))
