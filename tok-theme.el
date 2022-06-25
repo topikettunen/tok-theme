@@ -56,7 +56,8 @@
    `(link-visited ((,class (:foreground "magenta4" :inherit link))))
    `(highlight ((,class (:background "darkseagreen2"))))
    `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                      :background "gray20"))))
+                      :background "khaki"
+                      :foreground "black"))))
    `(secondary-selection ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
                                    :background "yellow1"))))
    `(trailing-whitespace ((,class (:background "red1"))))
