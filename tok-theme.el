@@ -54,10 +54,10 @@
    `(shadow ((,class (:foreground "grey50"))))
    `(link ((,class (:underline t :foreground "RoyalBlue3"))))
    `(link-visited ((,class (:foreground "magenta4" :inherit link))))
-   `(highlight ((,class (:background "darkseagreen2"))))
+   `(highlight ((,class (:foreground "black" :background "darkseagreen2"))))
    `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                      :background "khaki"
-                      :foreground "black"))))
+                      :background "blue"
+                      :foreground "white"))))
    `(secondary-selection ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
                                    :background "yellow1"))))
    `(trailing-whitespace ((,class (:background "red1"))))
@@ -121,8 +121,8 @@
    `(tty-menu-selected-face ((,class (:background "red"))))
 
    ;; show-paren
-   `(show-paren-match ((,class (:background "turquoise"))))
-   `(show-paren-match-expression ((,class (:background "turquoise"))))
+   `(show-paren-match ((,class (:foreground "black" :background "pale turquoise"))))
+   `(show-paren-match-expression ((,class (:inherit show-paren-match))))
    `(show-paren-mismatch ((,class (:foreground "white" :background "purple"))))
 
    ;; completions
@@ -130,7 +130,7 @@
    `(completions-group-separator ((,class (:strike-through t :inherit shadow))))
    `(completions-annotations ((t (nil))))
    `(completions-first-difference ((,class (:inherit bold))))
-   `(completions-common-part ((,class (:foreground "blue3"))))
+   `(completions-common-part ((,class (:foreground "turquoise"))))
 
    ;; font-lock
    `(font-lock-comment-face ((,class (:foreground "grey50" :slant italic))))
