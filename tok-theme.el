@@ -46,7 +46,7 @@
    'tok
    
    ;; Basic faces
-   `(default ((,class (:foreground "gray90" :background "gray10"))))
+   `(default ((,class (:foreground "gray80" :background "black"))))
    `(bold ((,class (:weight bold))))
    `(italic ((,class (:slant italic))))
    `(bold-italic ((,class (:weight bold :slant italic))))
@@ -66,7 +66,7 @@
    `(fringe ((,class (:inherit default))))
    `(scroll-bar ((,class (:foreground "black"))))
    `(border ((t (nil))))
-   `(cursor ((,class (:background "hotpink"))))
+   `(cursor ((,class (:background "red"))))
    `(mouse ((t (nil))))
    `(tool-bar ((,class (:foreground "black" :background "grey75"))))
    `(tab-bar ((,class (:foreground "black" :background "grey85" :inherit variable-pitch))))
@@ -418,7 +418,7 @@
    `(dired-warning ((,class (:inherit font-lock-warning-face))))
    `(dired-perm-write ((,class (:inherit font-lock-comment-delimiter-face))))
    `(dired-set-id ((,class (:inherit font-lock-warning-face))))
-   `(dired-directory ((,class (:foreground "blue"))))
+   `(dired-directory ((,class (:foreground "cyan"))))
    `(dired-symlink ((,class (:foreground "magenta"))))
    `(dired-broken-symlink ((,class (:weight bold :foreground "yellow1" :background "red1"))))
    `(dired-special ((,class (:inherit font-lock-variable-name-face))))
