@@ -39,14 +39,14 @@
 ;;; Code:
 
 (deftheme tok
-  "Minimal Emacs theme with dark and yellow color scheme")
+  "Simple, brutalistic and minimal Emacs theme")
 
 (let ((class '((class color) (min-colors 89))))
   (custom-theme-set-faces
    'tok
    
    ;; Basic faces
-   `(default ((,class (:foreground "gray80" :background "gray10"))))
+   `(default ((,class (:foreground "white" :background "black"))))
    `(bold ((,class (:weight bold))))
    `(italic ((,class (:slant italic))))
    `(bold-italic ((,class (:weight bold :slant italic))))
@@ -66,7 +66,7 @@
    `(fringe ((,class (:inherit default))))
    `(scroll-bar ((,class (:foreground "black"))))
    `(border ((t (nil))))
-   `(cursor ((,class (:background "red"))))
+   `(cursor ((,class (:background "hotpink"))))
    `(mouse ((t (nil))))
    `(tool-bar ((,class (:foreground "black" :background "grey75"))))
    `(tab-bar ((,class (:foreground "black" :background "grey85" :inherit variable-pitch))))
