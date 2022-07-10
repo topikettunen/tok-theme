@@ -46,7 +46,7 @@
    'tok
    
    ;; Basic faces
-   `(default ((,class (:foreground "gray80" :background "black"))))
+   `(default ((,class (:foreground "gray80" :background "gray10"))))
    `(bold ((,class (:weight bold))))
    `(italic ((,class (:slant italic))))
    `(bold-italic ((,class (:weight bold :slant italic))))
