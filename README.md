@@ -4,6 +4,8 @@ Simple light theme for Emacs. Main focus includes minimal syntax highlighting
 when programming but helpful coloring in modes where those matter,
 e.g. `org-mode`.
 
+![Screenshot of theme](/screenshot.png)
+
 ## Installation
 
 ### MELPA
