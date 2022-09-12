@@ -2,9 +2,7 @@
 
 Simple light theme for Emacs. Main focus includes minimal syntax highlighting
 when programming but helpful coloring in modes where those matter,
-e.g. `org-mode`.
-
-![Screenshot of theme](https://git.sr.ht/~tok/tok-theme/blob/main/screenshot.png)
+e.g. `magit`.
 
 ## Installation
 
