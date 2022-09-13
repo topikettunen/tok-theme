@@ -1,8 +1,6 @@
 ## About
 
-Simple dark theme for Emacs with some personal preferences for colors.
-
-![Screenshot of theme](https://git.sr.ht/~tok/tok-theme/blob/main/screenshot.png)
+Comfy dark monochromatic theme for Emacs.
 
 ## Installation
 

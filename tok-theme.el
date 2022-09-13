@@ -1,4 +1,4 @@
-;;; tok-theme.el --- Comfy dark theme -*- lexical-binding: t; -*-
+;;; tok-theme.el --- Comfy dark monochromatic theme -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
 ;; URL: https://github.com/topikettunen/tok-theme
@@ -34,17 +34,17 @@
 
 ;;; Commentary:
 
-;; Tok is a comfy dark coloured theme.
+;; Tok is a comfy dark monochromatic theme.
 
 ;;; Code:
 
 (deftheme tok
-  "Comfy dark theme")
+  "Comfy dark monochromatic theme")
 
 (let ((class '((class color) (min-colors 89))))
   (custom-theme-set-faces
    'tok
-   `(default ((,class (:foreground "white" :background "gray10"))))
+   `(default ((,class (:foreground "white" :background "black"))))
    `(bold ((,class (:weight bold))))
    `(italic ((,class (:slant italic))))
    `(bold-italic ((,class (:weight bold :slant italic))))
@@ -52,12 +52,12 @@
    `(shadow ((,class (:foreground "grey70"))))
    `(link ((,class (:underline t :foreground "cyan1"))))
    `(link-visited ((,class (:foreground "violet" :inherit link))))
-   `(highlight ((,class (:background "darkolivegreen"))))
-   `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t)) :background "blue3"))))
+   `(highlight ((,class (:background "grey15"))))
+   `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t)) :background "gray30"))))
    `(secondary-selection ((,class (,@(and (>= emacs-major-version 27) '(:extend t)) :background "SkyBlue4"))))
    `(trailing-whitespace ((,class (:background "red1"))))
-   `(line-number ((,class (:foreground "DarkGoldenrod1"))))
-   `(line-number-current-line ((,class (:inherit line-number))))
+   `(line-number ((,class (:foreground "gray50"))))
+   `(line-number-current-line ((,class (:inherit highlight))))
    `(line-number-major-tick ((,class (:weight bold :background "grey75"))))
    `(line-number-minor-tick ((,class (:weight bold :background "grey55"))))
    `(fill-column-indicator ((,class (:weight normal :slant normal :inherit shadow))))
@@ -71,7 +71,7 @@
    `(mode-line-inactive ((,class (:weight light :foreground "white" :background "grey20"))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:foreground "DarkGoldenrod1"))))
+   `(mode-line-buffer-id ((,class (:weight bold))))
    `(header-line ((,class (:box nil :foreground "grey90" :background "grey20" :inherit mode-line))))
    `(header-line-highlight ((,class (:inherit mode-line-highlight))))
    `(vertical-border ((,class (:foreground "gray20"))))
@@ -80,11 +80,11 @@
    `(window-divider-last-pixel ((,class (:foreground "gray40"))))
    `(internal-border ((t (nil))))
    `(child-frame-border ((t (nil))))
-   `(minibuffer-prompt ((,class (:foreground "cyan"))))
+   `(minibuffer-prompt ((,class (:foreground "grey80"))))
    `(fringe ((,class (:background "grey10"))))
    `(scroll-bar ((,class (:foreground "white"))))
    `(border ((t (nil))))
-   `(cursor ((,class (:background "orange"))))
+   `(cursor ((,class (:inherit default))))
    `(mouse ((t (nil))))
    `(tool-bar ((,class (:foreground "black" :background "grey75"))))
    `(tab-bar ((,class (:foreground "black" :background "grey85" :inherit variable-pitch))))
@@ -93,7 +93,7 @@
    `(help-argument-name ((,class (:inherit italic))))
    `(help-key-binding ((,class (:foreground "LightBlue" :background "grey19"))))
    `(glyphless-char ((,class (:height 0.6))))
-   `(error ((,class (:weight bold :foreground "Pink"))))
+   `(error ((,class (:weight bold :foreground "firebrick1"))))
    `(warning ((,class (:weight bold :foreground "DarkOrange"))))
    `(success ((,class (:weight bold :foreground "Green1"))))
    `(read-multiple-choice-face ((,class (:weight bold :inherit underline))))
@@ -113,16 +113,16 @@
    `(completions-annotations ((t (nil))))
    `(completions-first-difference ((,class (:inherit bold))))
    `(completions-common-part ((,class (:foreground "lightblue"))))
-   `(font-lock-comment-face ((,class (:foreground "chocolate1" :slant italic))))
+   `(font-lock-comment-face ((,class (:weight bold :italic t))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((,class (:foreground "LightGoldenrod1"))))
+   `(font-lock-string-face ((t (:italic t))))
    `(font-lock-doc-face ((,class (:inherit font-lock-string-face))))
    `(font-lock-doc-markup-face ((,class (:inherit font-lock-constant-face))))
-   `(font-lock-keyword-face ((,class (:foreground "LightGoldenrod3"))))
-   `(font-lock-builtin-face ((,class (:foreground "DarkGoldenrod3"))))
+   `(font-lock-keyword-face ((,class (:foreground "grey75"))))
+   `(font-lock-builtin-face ((,class (:foreground "gray75"))))
    `(font-lock-function-name-face ((t (nil))))
    `(font-lock-variable-name-face ((t (nil))))
-   `(font-lock-type-face ((,class (:foreground "LightGoldenrod2"))))
+   `(font-lock-type-face ((,class (:foreground "gray60"))))
    `(font-lock-constant-face ((t (nil))))
    `(font-lock-warning-face ((,class (:inherit error))))
    `(font-lock-negation-char-face ((t (nil))))
@@ -272,14 +272,14 @@
    `(calendar-weekday-header ((,class (:inherit font-lock-constant-face))))
    `(calendar-weekend-header ((,class (:inherit font-lock-comment-face))))
    `(calendar-month-header ((,class (:inherit font-lock-function-name-face))))
-   `(outline-1 ((t (nil))))
-   `(outline-2 ((t (nil))))
-   `(outline-3 ((t (nil))))
-   `(outline-4 ((t (nil))))
-   `(outline-5 ((t (nil))))
-   `(outline-6 ((t (nil))))
-   `(outline-7 ((t (nil))))
-   `(outline-8 ((t (nil))))
+   `(outline-1 ((,class (:inherit font-lock-function-name-face))))
+   `(outline-2 ((,class (:inherit font-lock-variable-name-face))))
+   `(outline-3 ((,class (:inherit font-lock-keyword-face))))
+   `(outline-4 ((,class (:inherit font-lock-comment-face))))
+   `(outline-5 ((,class (:inherit font-lock-type-face))))
+   `(outline-6 ((,class (:inherit font-lock-constant-face))))
+   `(outline-7 ((,class (:inherit font-lock-builtin-face))))
+   `(outline-8 ((,class (:inherit font-lock-string-face))))
    `(org-default ((,class (:inherit default))))
    `(org-hide ((,class (:foreground "black" :inherit fixed-pitch))))
    `(org-dispatcher-highlight ((,class (:weight bold :foreground "gold1" :background "gray20"))))
