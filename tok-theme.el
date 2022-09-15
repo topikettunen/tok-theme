@@ -44,7 +44,7 @@
 (let ((class '((class color) (min-colors 89))))
   (custom-theme-set-faces
    'tok
-   `(default ((,class (:foreground "white" :background "black"))))
+   `(default ((,class (:foreground "gray80" :background "black"))))
    `(bold ((,class (:weight bold))))
    `(italic ((,class (:slant italic))))
    `(bold-italic ((,class (:weight bold :slant italic))))
@@ -113,7 +113,7 @@
    `(completions-annotations ((t (nil))))
    `(completions-first-difference ((,class (:inherit bold))))
    `(completions-common-part ((,class (:foreground "lightblue"))))
-   `(font-lock-comment-face ((,class (:weight bold :italic t))))
+   `(font-lock-comment-face ((,class (:foreground "white" :weight bold :italic t))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
    `(font-lock-string-face ((t (nil))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
