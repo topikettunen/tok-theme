@@ -1,7 +1,7 @@
 ;;; tok-theme.el --- Comfy dark monochromatic theme -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
-;; URL: https://github.com/topikettunen/tok-theme
+;; URL: https://git.sr.ht/~tok/tok-theme
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "26.1"))
 
@@ -99,7 +99,9 @@
    `(outline-8 ((t (nil))))
    `(flymake-error ((,class (:underline (:style wave :color "red")))))
    `(flymake-warning ((,class (:underline (:style wave :color "DarkOrange")))))
-   `(flymake-note ((t (nil))))))
+   `(flymake-note ((t (nil))))
+   `(markdown-header-face ((t (nil))))
+   `(markdown-header-delimiter-face ((t (nil))))))
 
 (provide-theme 'tok)
 
