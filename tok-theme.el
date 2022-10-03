@@ -1,7 +1,7 @@
 ;;; tok-theme.el --- Comfy dark monochromatic theme -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
-;; URL: https://git.sr.ht/~tok/tok-theme
+;; URL: https://github.com/topikettunen/tok-theme
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "26.1"))
 
