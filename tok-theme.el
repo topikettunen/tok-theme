@@ -52,7 +52,7 @@
    `(secondary-selection ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
                                    :background "SkyBlue4"))))
    `(trailing-whitespace ((,class (:inherit error))))
-   `(cursor ((,class (:inherit default))))
+   `(cursor ((,class (:background "red"))))
    `(error ((,class (:weight bold :foreground "firebrick1"))))
    `(warning ((,class (:weight bold :foreground "DarkOrange"))))
    `(success ((,class (:weight bold :foreground "Green1"))))
