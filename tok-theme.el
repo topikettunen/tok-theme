@@ -1,4 +1,4 @@
-;;; tok-theme.el --- Comfy dark monochromatic theme -*- lexical-binding: t; -*-
+;;; tok-theme.el --- Comfy minimal theme -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
 ;; URL: https://github.com/topikettunen/tok-theme
@@ -34,21 +34,21 @@
 
 ;;; Commentary:
 
-;; Tok is a comfy dark monochromatic theme.
+;; Tok is a comfy minimaltheme.
 
 ;;; Code:
 
 (deftheme tok
-  "Comfy dark monochromatic theme")
+  "Comfy minimal theme")
 
 (let ((class '((class color) (min-colors 89))))
   (custom-theme-set-faces
    'tok
    ;; Basic faces
-   `(default ((,class (:foreground "white" :background "black"))))
-   `(highlight ((,class (:background "grey15"))))
+   `(default ((,class (:foreground "black" :background "white"))))
+   `(highlight ((,class (:background "#ffe995"))))
    `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                      :background "gray30"))))
+                      :background "cyan"))))
    `(secondary-selection ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
                                    :background "SkyBlue4"))))
    `(trailing-whitespace ((,class (:inherit error))))
@@ -56,19 +56,17 @@
    `(error ((,class (:weight bold :foreground "firebrick1"))))
    `(warning ((,class (:weight bold :foreground "DarkOrange"))))
    `(success ((,class (:weight bold :foreground "Green1"))))
-   `(minibuffer-prompt ((,class (:foreground "grey80"))))
+   `(minibuffer-prompt ((,class (:foreground "medium blue"))))
+   `(fringe ((t (nil))))
 
    ;; Line-numbes
-   `(line-number ((,class (:foreground "gray50"))))
    `(line-number-current-line ((,class (:inherit highlight))))
-   `(line-number-major-tick ((,class (:weight bold :background "grey75"))))
-   `(line-number-minor-tick ((,class (:weight bold :background "grey55"))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground "white" :background "grey10" :box (:line-width -1 :style released-button)))))
+   `(mode-line ((,class (:foreground "black" :background "#ffd22a" :box (:line-width -1 :style released-button)))))
    (when (>= emacs-major-version 29)
      `(mode-line-active ((,class (:inherit mode-line)))))
-   `(mode-line-inactive ((,class (:weight light :foreground "white" :background "grey20"))))
+   `(mode-line-inactive ((,class (:weight light :foreground "black" :background "#ffe995"))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
@@ -90,24 +88,16 @@
    `(font-lock-regexp-grouping-backslash ((t (nil))))
    `(font-lock-regexp-grouping-construct ((t (nil))))
 
-   ;; isearch
-   `(isearch ((,class (:foreground "brown4" :background "palevioletred2"))))
-   `(isearch-fail ((,class (:background "red4"))))
-   `(lazy-highlight ((,class (:background "paleturquoise4"))))
-   `(isearch-group-1 ((,class (:foreground "brown4" :background "palevioletred1"))))
-   `(isearch-group-2 ((,class (:foreground "brown4" :background "palevioletred3"))))
-
    ;; Flymake
    `(flymake-error ((,class (:underline (:style wave :color "red")))))
    `(flymake-warning ((,class (:underline (:style wave :color "DarkOrange")))))
    `(flymake-note ((t (nil))))
 
-   ;; Disabled faces
-   `(fringe ((t (nil))))
+   ;; sh
    `(sh-heredoc ((t (nil))))
    `(sh-quoted-exec ((t (nil))))
-   `(terraform--resource-name-face ((t (nil))))
-   `(terraform--resource-type-face ((t (nil))))
+
+   ;; Outline
    `(outline-1 ((t (nil))))
    `(outline-2 ((t (nil))))
    `(outline-3 ((t (nil))))
@@ -116,6 +106,12 @@
    `(outline-6 ((t (nil))))
    `(outline-7 ((t (nil))))
    `(outline-8 ((t (nil))))
+
+   ;; Terraform
+   `(terraform--resource-name-face ((t (nil))))
+   `(terraform--resource-type-face ((t (nil))))
+
+   ;; Markdown
    `(markdown-header-face ((t (nil))))
    `(markdown-header-delimiter-face ((t (nil))))))
 
