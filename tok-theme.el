@@ -41,14 +41,15 @@
 (deftheme tok
   "Comfy minimal theme")
 
-(let ((class '((class color) (min-colors 89))))
+(let ((class '((class color) (min-colors 89)))
+      (sun "#ffd22a") (light-sun "#ffe995"))
   (custom-theme-set-faces
    'tok
    ;; Basic faces
    `(default ((,class (:foreground "black" :background "white"))))
-   `(highlight ((,class (:background "#ffe995"))))
+   `(highlight ((,class (:background ,light-sun))))
    `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                      :background "#ffd22a"))))
+                      :background ,sun))))
    `(secondary-selection ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
                                    :background "cyan"))))
    `(trailing-whitespace ((,class (:inherit error))))
@@ -63,10 +64,10 @@
    `(line-number-current-line ((,class (:inherit highlight))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground "black" :background "#ffd22a" :box (:line-width -1 :style released-button)))))
+   `(mode-line ((,class (:foreground "black" :background ,sun :box (:line-width -1 :style released-button)))))
    (when (>= emacs-major-version 29)
      `(mode-line-active ((,class (:inherit mode-line)))))
-   `(mode-line-inactive ((,class (:weight light :foreground "black" :background "#ffe995"))))
+   `(mode-line-inactive ((,class (:weight light :foreground "black" :background ,light-sun))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
