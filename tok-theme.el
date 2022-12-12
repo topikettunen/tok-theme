@@ -34,7 +34,7 @@
 
 ;;; Commentary:
 
-;; Tok is a comfy minimaltheme.
+;; Tok is a comfy minimal theme.
 
 ;;; Code:
 
