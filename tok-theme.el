@@ -42,16 +42,16 @@
   "Comfy minimal theme")
 
 (let ((class '((class color) (min-colors 89)))
-      (sun "#ffd22a") (light-sun "#ffe995"))
+      (sun "#ffd22a") (light-sun "#ffe995")
+      (bg "#fffae6") (fg "#444444"))
   (custom-theme-set-faces
    'tok
    ;; Basic faces
-   `(default ((,class (:foreground "black" :background "white"))))
+   `(default ((,class (:foreground ,fg :background ,bg))))
    `(highlight ((,class (:background ,light-sun))))
    `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
                       :background ,sun))))
-   `(secondary-selection ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                                   :background "cyan"))))
+   `(secondary-selection ((t (:inherit region))))
    `(trailing-whitespace ((,class (:inherit error))))
    `(cursor ((,class (:background "red"))))
    `(error ((,class (:weight bold :foreground "firebrick1"))))
@@ -59,23 +59,24 @@
    `(success ((,class (:weight bold :foreground "Green1"))))
    `(minibuffer-prompt ((,class (:foreground "medium blue"))))
    `(fringe ((t (nil))))
+   `(button ((t (:underline t))))
 
    ;; Line-numbes
    `(line-number-current-line ((,class (:inherit highlight))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground "black" :background ,sun :box (:line-width -1 :style released-button)))))
+   `(mode-line ((,class (:foreground ,fg :background ,sun :box (:line-width -1 :style released-button)))))
    (when (>= emacs-major-version 29)
      `(mode-line-active ((,class (:inherit mode-line)))))
-   `(mode-line-inactive ((,class (:weight light :foreground "black" :background ,light-sun))))
+   `(mode-line-inactive ((,class (:weight light :foreground ,fg :background ,light-sun))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
 
    ;; Font-lock
-   `(font-lock-comment-face ((,class (:foreground "grey50"))))
+   `(font-lock-comment-face ((,class (:foreground "gray65" :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((t (nil))))
+   `(font-lock-string-face ((t (:slant italic))))
    `(font-lock-doc-markup-face ((t (nil))))
    `(font-lock-keyword-face ((t (nil))))
    `(font-lock-builtin-face ((t (nil))))
@@ -114,7 +115,9 @@
 
    ;; Markdown
    `(markdown-header-face ((t (nil))))
-   `(markdown-header-delimiter-face ((t (nil))))))
+   `(markdown-header-delimiter-face ((t (nil))))
+   `(markdown-metadata-key-face ((t (:inherit font-lock-comment-face))))
+   `(markdown-metadata-value-face ((t (:inherit font-lock-comment-face))))))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
