@@ -1,7 +1,8 @@
 ## About
 
-Comfy dark monochromatic theme for Emacs. Simple syntax highlighting for
-highlighting errors and some coloring in modes that matter, e.g. `magit`.
+Comfy minimal theme for Emacs. Simple syntax highlighting for
+highlighting errors, comments and some coloring in modes that matter,
+e.g. `magit`.
 
 ![Picture of the theme](/screenshot.png)
 
