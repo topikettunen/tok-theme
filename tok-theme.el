@@ -73,6 +73,9 @@
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
 
+   ;; Header
+   `(header-line ((,class (:inherit mode-line-inactive :box nil))))
+
    ;; Font-lock
    `(font-lock-comment-face ((,class (:foreground "gray50" :slant italic))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
@@ -91,10 +94,8 @@
    `(font-lock-regexp-grouping-backslash ((,class (nil))))
    `(font-lock-regexp-grouping-construct ((,class (nil))))
 
-   ;; Flymake
-   `(flymake-error ((,class (:underline (:style wave :color "red")))))
-   `(flymake-warning ((,class (:underline (:style wave :color "DarkOrange")))))
-   `(flymake-note ((,class (nil))))
+   ;; ERC
+   `(erc-timestamp-face ((,class (:foreground "black"))))
 
    ;; sh
    `(sh-heredoc ((,class (nil))))
