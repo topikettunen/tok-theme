@@ -1,4 +1,4 @@
-;;; tok-theme.el --- Comfy minimal theme -*- lexical-binding: t; -*-
+;;; tok-theme.el --- Calm theme with saffron color scheme -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
 ;; URL: https://github.com/topikettunen/tok-theme
@@ -34,12 +34,12 @@
 
 ;;; Commentary:
 
-;; Tok is a comfy minimal theme.
+;; Tok is a calm theme with saffron color scheme.
 
 ;;; Code:
 
 (deftheme tok
-  "Comfy minimal theme")
+  "Calm theme with saffron color scheme")
 
 (let ((class '((class color) (min-colors 89)))
       (sun "#ffd22a") (light-sun "#ffe995")

@@ -1,6 +1,6 @@
 ## About
 
-Comfy minimal theme for Emacs. Simple syntax highlighting for
+Calm theme with saffron color scheme for Emacs. Simple syntax highlighting for
 highlighting errors, comments and some coloring in modes that matter,
 e.g. `magit`.
 
