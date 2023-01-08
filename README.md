@@ -1,8 +1,8 @@
 ## About
 
-Calm theme with saffron color scheme for Emacs. Simple syntax highlighting for
-highlighting errors, comments and some coloring in modes that matter,
-e.g. `magit`.
+Minimal and calm theme with saffron color scheme for Emacs. Simple
+syntax highlighting (comments, strings and errors) and some coloring
+in modes that matter, e.g. `magit`.
 
 ![Picture of the theme](/screenshot.png)
 
@@ -18,8 +18,8 @@ e.g. `magit`.
 
 ### Local
 
-You can also install this theme by copying it to your `.emacs.d`. I use `themes`
-directory for holding this so I can load it with: 
+You can also install this theme by copying it to your `.emacs.d`. I
+use `themes` directory for holding this so I can load it with:
 
 ``` elisp
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -37,7 +37,7 @@ Or with `use-package`:
 
 ## Contributing
 
-I like to keep my own `.emacs.d` relatively clean so there might be some "ugly"
-coloring in some of the modes, since I have most likely just missed that because
-I don't use it. If you happen to find some of these, feel free to drop a PR to clean
-it.
+I like to keep my own `.emacs.d` relatively clean so there might be
+some "ugly" coloring in some of the modes, since I have most likely
+just missed that because I don't use it. If you happen to find some of
+these, feel free to drop a PR to clean it.
