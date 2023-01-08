@@ -120,6 +120,12 @@
    `(terraform--resource-name-face ((,class (nil))))
    `(terraform--resource-type-face ((,class (nil))))
 
+   ;; Magit
+   `(magit-diff-added ((,class (:background "#ddffdd"))))
+   `(magit-diff-removed ((,class (:background "#ffdddd"))))
+   `(magit-diff-added-highlight ((,class (:background "#cceecc"))))
+   `(magit-diff-removed-highlight ((,class (:background "#eecccc"))))
+
    ;; Markdown
    `(markdown-header-face ((,class (:inherit outline-1))))
    `(markdown-header-delimiter-face ((,class (nil))))
