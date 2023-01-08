@@ -42,18 +42,23 @@
   "Calm theme with saffron color scheme")
 
 (let ((class '((class color) (min-colors 89)))
-      (sun "#ffd22a") (light-sun "#ffe995")
-      (bg "#ffffff") (fg "#000000"))
+      (dark-saffron "#6e5406") (saffron "#f4c430") (light-saffron "#f8d979")
+      (bg "#fffefd") (fg "#110d01") (comment "#7f7f7f"))
   (custom-theme-set-faces
    'tok
+   ;; In case you're using this theme in terminal, let the terminal
+   ;; emulator define these.
+   (when (display-graphic-p)
+     `(cursor ((,class (:background "red")))))
+   (when (display-graphic-p) ; Have to call `when' here due to reasons.
+     `(default ((,class (:foreground ,fg :background ,bg)))))
+   
    ;; Basic faces
-   `(default ((,class (:foreground ,fg :background ,bg))))
-   `(highlight ((,class (:background ,light-sun))))
+   `(highlight ((,class (:background ,light-saffron))))
    `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                      :background ,sun))))
+                      :foreground ,fg :background ,saffron))))
    `(secondary-selection ((,class (:inherit region))))
    `(trailing-whitespace ((,class (:inherit error))))
-   `(cursor ((,class (:background "red"))))
    `(error ((,class (:weight bold :foreground "firebrick1"))))
    `(warning ((,class (:weight bold :foreground "DarkOrange"))))
    `(success ((,class (:weight bold :foreground "Green1"))))
@@ -65,10 +70,10 @@
    `(line-number-current-line ((,class (:inherit highlight))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground ,fg :background ,sun :box (:line-width -1 :style released-button)))))
+   `(mode-line ((,class (:foreground ,fg :background ,saffron :box (:line-width -1 :style released-button)))))
    (when (>= emacs-major-version 29)
      `(mode-line-active ((,class (:inherit mode-line)))))
-   `(mode-line-inactive ((,class (:weight light :foreground ,fg :background ,light-sun))))
+   `(mode-line-inactive ((,class (:weight light :foreground ,fg :background ,light-saffron))))
    `(mode-line-highlight ((,class (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
@@ -77,9 +82,9 @@
    `(header-line ((,class (:inherit mode-line-inactive :box nil))))
 
    ;; Font-lock
-   `(font-lock-comment-face ((,class (:foreground "gray50" :slant italic))))
+   `(font-lock-comment-face ((,class (:foreground ,comment))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((,class (:slant italic))))
+   `(font-lock-string-face ((,class (:foreground ,dark-saffron))))
    `(font-lock-doc-face ((, class(:inherit font-lock-comment-face))))
    `(font-lock-doc-markup-face ((,class (nil))))
    `(font-lock-keyword-face ((,class (nil))))
@@ -102,21 +107,21 @@
    `(sh-quoted-exec ((,class (nil))))
 
    ;; Outline
-   `(outline-1 ((,class (nil))))
-   `(outline-2 ((,class (nil))))
-   `(outline-3 ((,class (nil))))
-   `(outline-4 ((,class (nil))))
-   `(outline-5 ((,class (nil))))
-   `(outline-6 ((,class (nil))))
-   `(outline-7 ((,class (nil))))
-   `(outline-8 ((,class (nil))))
+   `(outline-1 ((,class (:foreground ,dark-saffron))))
+   `(outline-2 ((,class (:inherit outline-1))))
+   `(outline-3 ((,class (:inherit outline-1))))
+   `(outline-4 ((,class (:inherit outline-1))))
+   `(outline-5 ((,class (:inherit outline-1))))
+   `(outline-6 ((,class (:inherit outline-1))))
+   `(outline-7 ((,class (:inherit outline-1))))
+   `(outline-8 ((,class (:inherit outline-1))))
 
    ;; Terraform
    `(terraform--resource-name-face ((,class (nil))))
    `(terraform--resource-type-face ((,class (nil))))
 
    ;; Markdown
-   `(markdown-header-face ((,class (nil))))
+   `(markdown-header-face ((,class (:inherit outline-1))))
    `(markdown-header-delimiter-face ((,class (nil))))
    `(markdown-metadata-key-face ((,class (:inherit font-lock-comment-face))))
    `(markdown-metadata-value-face ((,class (:inherit font-lock-comment-face))))))
