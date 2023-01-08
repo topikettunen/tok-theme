@@ -100,7 +100,7 @@
    `(font-lock-regexp-grouping-construct ((,class (nil))))
 
    ;; ERC
-   `(erc-timestamp-face ((,class (:foreground "black"))))
+   `(erc-timestamp-face ((,class (:foreground nil))))
 
    ;; sh
    `(sh-heredoc ((,class (nil))))
