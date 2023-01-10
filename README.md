@@ -1,7 +1,7 @@
 ## About
 
 Minimal and calm theme with saffron color scheme for Emacs. Simple
-syntax highlighting (comments, strings and errors) and some coloring
+syntax highlighting (comments and errors) and some coloring
 in modes that matter, e.g. `magit`.
 
 ![Picture of the theme](/screenshot.png)
