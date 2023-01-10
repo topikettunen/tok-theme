@@ -62,7 +62,7 @@
    `(error ((,class (:weight bold :foreground "firebrick1"))))
    `(warning ((,class (:weight bold :foreground "DarkOrange"))))
    `(success ((,class (:weight bold :foreground "Green1"))))
-   `(minibuffer-prompt ((,class (:foreground "cyan"))))
+   `(minibuffer-prompt ((,class (:foreground ,saffron))))
    `(fringe ((,class (nil))))
    `(button ((,class (:underline t))))
 
