@@ -63,7 +63,7 @@
    `(warning ((,class (:weight bold :foreground "DarkOrange"))))
    `(success ((,class (:weight bold :foreground "Green1"))))
    `(minibuffer-prompt ((,class (:foreground ,saffron))))
-   `(fringe ((,class (nil))))
+   `(fringe ((t (nil))))
    `(button ((,class (:underline t))))
 
    ;; Line-numbes
@@ -74,7 +74,7 @@
    (when (>= emacs-major-version 29)
      `(mode-line-active ((,class (:inherit mode-line)))))
    `(mode-line-inactive ((,class (:weight light :foreground ,fg :background "gray10"))))
-   `(mode-line-highlight ((,class (nil))))
+   `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold :foreground ,saffron))))
 
@@ -84,27 +84,32 @@
    ;; Font-lock
    `(font-lock-comment-face ((,class (:foreground ,saffron))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((,class (nil))))
+   `(font-lock-string-face ((t (nil))))
    `(font-lock-doc-face ((, class(:inherit font-lock-comment-face))))
-   `(font-lock-doc-markup-face ((,class (nil))))
-   `(font-lock-keyword-face ((,class (nil))))
-   `(font-lock-builtin-face ((,class (nil))))
-   `(font-lock-function-name-face ((,class (nil))))
-   `(font-lock-variable-name-face ((,class (nil))))
-   `(font-lock-type-face ((,class (nil))))
-   `(font-lock-constant-face ((,class (nil))))
-   `(font-lock-warning-face ((,class (nil))))
-   `(font-lock-negation-char-face ((,class (nil))))
+   `(font-lock-doc-markup-face ((t (nil))))
+   `(font-lock-keyword-face ((t (nil))))
+   `(font-lock-builtin-face ((t (nil))))
+   `(font-lock-function-name-face ((t (nil))))
+   `(font-lock-variable-name-face ((t (nil))))
+   `(font-lock-type-face ((t (nil))))
+   `(font-lock-constant-face ((t (nil))))
+   `(font-lock-warning-face ((t (nil))))
+   `(font-lock-negation-char-face ((t (nil))))
    `(font-lock-preprocessor-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-regexp-grouping-backslash ((,class (nil))))
-   `(font-lock-regexp-grouping-construct ((,class (nil))))
+   `(font-lock-regexp-grouping-backslash ((t (nil))))
+   `(font-lock-regexp-grouping-construct ((t (nil))))
+
+   ;; Dired
+   `(dired-directory ((,class (:foreground "cyan"))))
+   `(dired-symlink ((,class (:foreground "magenta"))))
+   `(dired-broken-symlink ((,class (:foreground "red"))))
 
    ;; ERC
    `(erc-timestamp-face ((,class (:foreground nil))))
 
    ;; sh
-   `(sh-heredoc ((,class (nil))))
-   `(sh-quoted-exec ((,class (nil))))
+   `(sh-heredoc ((t (nil))))
+   `(sh-quoted-exec ((t (nil))))
 
    ;; Outline
    `(outline-1 ((,class (:foreground ,saffron))))
@@ -117,12 +122,12 @@
    `(outline-8 ((,class (:inherit outline-1))))
 
    ;; Terraform
-   `(terraform--resource-name-face ((,class (nil))))
-   `(terraform--resource-type-face ((,class (nil))))
+   `(terraform--resource-name-face ((t (nil))))
+   `(terraform--resource-type-face ((t (nil))))
 
    ;; Markdown
    `(markdown-header-face ((,class (:inherit outline-1))))
-   `(markdown-header-delimiter-face ((,class (nil))))
+   `(markdown-header-delimiter-face ((t (nil))))
    `(markdown-metadata-key-face ((,class (:inherit font-lock-comment-face))))
    `(markdown-metadata-value-face ((,class (:inherit font-lock-comment-face))))))
 
