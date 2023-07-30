@@ -24,7 +24,7 @@ You can also install this theme by copying it to your `.emacs.d`. I
 use `themes` directory for holding this so I can load it with:
 
 ``` elisp
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/tok-theme")
 (load-theme 'tok t)
 ```
 
@@ -32,8 +32,9 @@ Or with `use-package`:
 
 ``` elisp
 (use-package tok-theme
-  :load-path "themes"
+  :load-path "themes/tok-theme"
   :config
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/tok-theme")
   (load-theme 'tok t))
 ```
 
