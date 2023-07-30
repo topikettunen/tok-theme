@@ -3,8 +3,8 @@
 [![MELPA](https://melpa.org/packages/tok-theme-badge.svg)](https://melpa.org/#/tok-theme)
 
 Minimal light monochromatic theme for Emacs in the spirit of Zmacs and
-Smalltalk-80. Simple syntax highlighting, bold for comments, italic
-for string, parenthesis and `diff/magit` for viewing patches.
+Smalltalk-80. Simple syntax highlighting and minimal colouring for things such
+as `diff/magit` patches.
 
 ![Screenshot of the theme](/screenshot.png)
 
