@@ -55,12 +55,12 @@ Zmacs and Smalltalk-80"
    `(highlight ((,class (:background "grey95"))))
    `(region ((,class (:extend t :background "grey90"))))
    `(secondary-selection ((,class (:inherit region))))
-   `(trailing-whitespace ((,class (:background "hotpink"))))
+   `(trailing-whitespace ((,class (:underline t))))
    `(error ((,class (:weight bold :foreground "red"))))
    `(warning ((,class (:weight bold :foreground "orange"))))
    `(success ((,class (:weight bold :foreground "green"))))
    `(fringe ((,class (nil))))
-   `(button ((,class (:underline t))))
+   `(button ((,class (:box 1))))
    `(vertical-border ((,class (:foreground "black"))))
    `(minibuffer-prompt ((,class (nil))))
    `(link ((,class (:underline t))))
@@ -70,17 +70,17 @@ Zmacs and Smalltalk-80"
    `(line-number-current-line ((,class (:foreground "black" :background "grey95"))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground "white" :background "black"))))
+   `(mode-line ((,class (:foreground "black" :background "white" :box 1))))
    `(mode-line-active ((,class (:inherit mode-line))))
-   `(mode-line-inactive ((,class (:weight light :background "grey75"))))
+   `(mode-line-inactive ((,class (:weight light :background "grey90" :box 1))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
 
    ;; Font-lock
-   `(font-lock-comment-face ((,class (:italic t :foreground "grey50"))))
+   `(font-lock-comment-face ((,class (:foreground "grey60"))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((,class (:background "grey95" :weight light))))
+   `(font-lock-string-face ((,class (:background "grey95"))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
    `(font-lock-doc-markup-face ((,class (nil))))
    `(font-lock-keyword-face ((,class (nil))))
@@ -94,6 +94,12 @@ Zmacs and Smalltalk-80"
    `(font-lock-preprocessor-face ((,class (:weight bold))))
    `(font-lock-regexp-grouping-backslash ((,class (nil))))
    `(font-lock-regexp-grouping-construct ((,class (nil))))
+
+   ;; isearch
+   `(isearch ((,class (:foreground "white" :background "black"))))
+   `(isearch-group-1 ((,class (:background "grey50"))))
+   `(isearch-group-2 ((,class (:background "grey60"))))
+   `(lazy-highlight ((,class (:background "grey90"))))
 
    ;; Dired
    `(dired-directory ((,class (:weight bold))))
@@ -160,9 +166,5 @@ Zmacs and Smalltalk-80"
                (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide-theme 'tok)
-
-;; Local Variables:
-;; no-byte-compile: t
-;; End:
 
 ;;; tok-theme.el ends here
