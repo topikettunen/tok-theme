@@ -1,9 +1,9 @@
-;;; tok-theme.el --- Minimal light monochromatic theme for Emacs in the spirit of Zmacs and Smalltalk-80-*- lexical-binding: t; -*-
+;;; tok-theme.el --- Minimal light monochromatic theme for Emacs in the spirit of Zmacs and Smalltalk-80. -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
 ;; URL: https://github.com/topikettunen/tok-theme
 ;; Version: 0.1
-;; Package-Requires: ((emacs "26.1"))
+;; Package-Requires: ((emacs "27.0"))
 
 ;; This is free and unencumbered software released into the public domain.
 ;;
@@ -48,17 +48,12 @@ Zmacs and Smalltalk-80"
 (let ((class '((class color) (min-colors 89))))
   (custom-theme-set-faces
    'tok
-   ;; In case you're using this theme in terminal, let the terminal
-   ;; emulator define these.
-   (when (display-graphic-p)
-     `(cursor ((,class (:background "black")))))
-   (when (display-graphic-p) ; Have to call `when' here due to reasons.
-     `(default ((,class (:foreground "black" :background "white")))))
 
    ;; Basic faces
+   `(default ((,class (:foreground "black" :background "white"))))
+   `(cursor ((,class (:background "black"))))
    `(highlight ((,class (:background "grey95"))))
-   `(region ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                      :background "grey90"))))
+   `(region ((,class (:extend t :background "grey90"))))
    `(secondary-selection ((,class (:inherit region))))
    `(trailing-whitespace ((,class (:background "hotpink"))))
    `(error ((,class (:weight bold :foreground "red"))))
@@ -68,27 +63,24 @@ Zmacs and Smalltalk-80"
    `(button ((,class (:underline t))))
    `(vertical-border ((,class (:foreground "black"))))
    `(minibuffer-prompt ((,class (nil))))
+   `(link ((,class (:underline t))))
 
    ;; Line-numbes
    `(line-number ((,class (:foreground "grey75"))))
    `(line-number-current-line ((,class (:foreground "black" :background "grey95"))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground "black" :background "white" :box 1))))
-   (when (>= emacs-major-version 29)
-     `(mode-line-active ((,class (:inherit mode-line)))))
-   `(mode-line-inactive ((,class (:weight light
-                                          :foreground "grey20"
-                                          :background "grey90"
-                                          :box 1))))
+   `(mode-line ((,class (:foreground "white" :background "black"))))
+   `(mode-line-active ((,class (:inherit mode-line))))
+   `(mode-line-inactive ((,class (:weight light :background "grey75"))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
 
    ;; Font-lock
-   `(font-lock-comment-face ((,class (:weight bold))))
+   `(font-lock-comment-face ((,class (:italic t :foreground "grey50"))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((,class (:italic t :weight light))))
+   `(font-lock-string-face ((,class (:background "grey95" :weight light))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
    `(font-lock-doc-markup-face ((,class (nil))))
    `(font-lock-keyword-face ((,class (nil))))
@@ -99,7 +91,7 @@ Zmacs and Smalltalk-80"
    `(font-lock-constant-face ((,class (nil))))
    `(font-lock-warning-face ((,class (nil))))
    `(font-lock-negation-char-face ((,class (nil))))
-   `(font-lock-preprocessor-face ((,class (:inherit font-lock-comment-face))))
+   `(font-lock-preprocessor-face ((,class (:weight bold))))
    `(font-lock-regexp-grouping-backslash ((,class (nil))))
    `(font-lock-regexp-grouping-construct ((,class (nil))))
 
@@ -128,7 +120,7 @@ Zmacs and Smalltalk-80"
    `(outline-8 ((,class (:inherit outline-1))))
 
    ;; Show paren
-   `(show-paren-match ((,class (:background "grey80"))))
+   `(show-paren-match ((,class (:weight bold :background "grey80"))))
    `(show-paren-match-expression ((,class (:inherit show-paren-match))))
    `(show-paren-mismatch ((,class (:inherit error))))
 
@@ -147,14 +139,10 @@ Zmacs and Smalltalk-80"
    ;; Magit
    `(magit-diff-file-heading ((,class (nil))))
    `(magit-section-heading ((,class (:weight bold))))
-   `(magit-diff-added ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                                :background "#ddffdd"))))
-   `(magit-diff-added-highlight ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                                          :background "#cceecc"))))
-   `(magit-diff-removed ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                                  :background "#ffdddd"))))
-   `(magit-diff-removed-highlight ((,class (,@(and (>= emacs-major-version 27) '(:extend t))
-                                          :background "#eecccc"))))
+   `(magit-diff-added ((,class (:extend t :background "#ddffdd"))))
+   `(magit-diff-added-highlight ((,class (:extend t :background "#cceecc"))))
+   `(magit-diff-removed ((,class (:extend t :background "#ffdddd"))))
+   `(magit-diff-removed-highlight ((,class (:extend t :background "#eecccc"))))
 
    ;; Completions
    `(completions-common-part ((,class (:weight bold))))
