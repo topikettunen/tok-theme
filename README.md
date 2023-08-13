@@ -38,6 +38,16 @@ Or with `use-package`:
   (load-theme 'tok t))
 ```
 
+### Dark mode
+
+If you want to use dark variant of theme, you can set `tok-theme-dark` to true
+before loading theme:
+
+``` elisp
+(setq tok-theme-dark t)
+(load-theme 'tok)
+```
+
 ## Contributing
 
 I like to keep my own `.emacs.d` relatively clean so there might be

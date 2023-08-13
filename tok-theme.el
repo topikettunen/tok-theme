@@ -1,4 +1,4 @@
-;;; tok-theme.el --- Minimal light monochromatic theme for Emacs in the spirit of Zmacs and Smalltalk-80. -*- lexical-binding: t; -*-
+;;; tok-theme.el --- Minimal monochromatic theme for Emacs in the spirit of Zmacs and Smalltalk-80. -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
 ;; URL: https://github.com/topikettunen/tok-theme
@@ -34,26 +34,41 @@
 
 ;;; Commentary:
 
-;; Tok is a minimal light monochromatic theme for Emacs in the spirit
+;; Tok is a minimal monochromatic theme for Emacs in the spirit
 ;; of Zmacs and Smalltalk-80.
 
 ;;; Code:
 
+(defgroup tok-theme nil
+  "Options for tok-theme."
+  :group 'faces)
+
+(defcustom tok-theme-dark nil
+  "If non-nil, make the theme dark."
+  :group 'tok-theme
+  :type 'boolean)
+
 (deftheme tok
-  "Minimal light monochromatic theme for Emacs in the spirit of
+  "Minimal monochromatic theme for Emacs in the spirit of
 Zmacs and Smalltalk-80"
-  :background-mode 'light
   :kind 'color-scheme)
 
-(let ((class '((class color) (min-colors 89))))
+(let ((class '((class color) (min-colors 89)))
+      (bg    (if tok-theme-dark "black" "white"))
+      (fg    (if tok-theme-dark "white" "black"))
+      (dim-1 (if tok-theme-dark "grey20" "grey90"))
+      (dim-2 (if tok-theme-dark "grey30" "grey80"))
+      (dim-3 (if tok-theme-dark "grey40" "grey70"))
+      (dim-4 (if tok-theme-dark "grey50" "grey60"))
+      (dim-5 (if tok-theme-dark "grey60" "grey50")))
   (custom-theme-set-faces
    'tok
 
    ;; Basic faces
-   `(default ((,class (:foreground "black" :background "white"))))
-   `(cursor ((,class (:background "black"))))
-   `(highlight ((,class (:background "grey95"))))
-   `(region ((,class (:extend t :background "grey90"))))
+   `(default ((,class (:foreground ,fg :background ,bg))))
+   `(cursor ((,class (:background ,fg))))
+   `(highlight ((,class (:background ,dim-1))))
+   `(region ((,class (:extend t :background ,dim-1))))
    `(secondary-selection ((,class (:inherit region))))
    `(trailing-whitespace ((,class (:underline t))))
    `(error ((,class (:weight bold :foreground "red"))))
@@ -61,26 +76,26 @@ Zmacs and Smalltalk-80"
    `(success ((,class (:weight bold :foreground "green"))))
    `(fringe ((,class (nil))))
    `(button ((,class (:box 1))))
-   `(vertical-border ((,class (:foreground "black"))))
+   `(vertical-border ((,class (:foreground ,fg))))
    `(minibuffer-prompt ((,class (nil))))
    `(link ((,class (:underline t))))
 
    ;; Line-numbes
-   `(line-number ((,class (:foreground "grey75"))))
-   `(line-number-current-line ((,class (:foreground "black" :background "grey95"))))
+   `(line-number ((,class (:foreground ,dim-3))))
+   `(line-number-current-line ((,class (:foreground ,fg :background ,dim-1))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground "black" :background "white" :box 1))))
+   `(mode-line ((,class (:foreground ,fg :background ,bg :box 1))))
    `(mode-line-active ((,class (:inherit mode-line))))
-   `(mode-line-inactive ((,class (:weight light :background "grey90" :box 1))))
+   `(mode-line-inactive ((,class (:weight light :background ,dim-1 :box 1))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
 
    ;; Font-lock
-   `(font-lock-comment-face ((,class (:foreground "grey60"))))
+   `(font-lock-comment-face ((,class (:foreground ,dim-4))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((,class (:background "grey95"))))
+   `(font-lock-string-face ((,class (:background ,dim-1))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
    `(font-lock-doc-markup-face ((,class (nil))))
    `(font-lock-keyword-face ((,class (nil))))
@@ -96,10 +111,10 @@ Zmacs and Smalltalk-80"
    `(font-lock-regexp-grouping-construct ((,class (nil))))
 
    ;; isearch
-   `(isearch ((,class (:foreground "white" :background "black"))))
-   `(isearch-group-1 ((,class (:background "grey50"))))
-   `(isearch-group-2 ((,class (:background "grey60"))))
-   `(lazy-highlight ((,class (:background "grey90"))))
+   `(isearch ((,class (:foreground ,bg :background ,fg))))
+   `(isearch-group-1 ((,class (:background ,dim-5))))
+   `(isearch-group-2 ((,class (:background ,dim-4))))
+   `(lazy-highlight ((,class (:background ,dim-1))))
 
    ;; Dired
    `(dired-directory ((,class (:weight bold))))
@@ -126,7 +141,7 @@ Zmacs and Smalltalk-80"
    `(outline-8 ((,class (:inherit outline-1))))
 
    ;; Show paren
-   `(show-paren-match ((,class (:weight bold :background "grey80"))))
+   `(show-paren-match ((,class (:weight bold :background ,dim-2))))
    `(show-paren-match-expression ((,class (:inherit show-paren-match))))
    `(show-paren-mismatch ((,class (:inherit error))))
 
@@ -145,19 +160,23 @@ Zmacs and Smalltalk-80"
    ;; Magit
    `(magit-diff-file-heading ((,class (nil))))
    `(magit-section-heading ((,class (:weight bold))))
-   `(magit-diff-added ((,class (:extend t :background "#ddffdd"))))
-   `(magit-diff-added-highlight ((,class (:extend t :background "#cceecc"))))
-   `(magit-diff-removed ((,class (:extend t :background "#ffdddd"))))
-   `(magit-diff-removed-highlight ((,class (:extend t :background "#eecccc"))))
+   ;;
+   ;; Let Magit decide based on whether the `background-mode' is light or
+   ;; dark.
+   ;;
+   ;; `(magit-diff-added ((,class (:extend t :background "#ddffdd"))))
+   ;; `(magit-diff-added-highlight ((,class (:extend t :background "#cceecc"))))
+   ;; `(magit-diff-removed ((,class (:extend t :background "#ffdddd"))))
+   ;; `(magit-diff-removed-highlight ((,class (:extend t :background "#eecccc"))))
 
    ;; Completions
    `(completions-common-part ((,class (:weight bold))))
    `(completions-first-difference ((,class (nil))))
 
    ;; Corfu
-   `(corfu-default ((,class (:background "white"))))
-   `(corfu-bar ((,class (:background "black"))))
-   `(corfu-border ((,class (:background "black"))))
+   `(corfu-default ((,class (:background ,bg))))
+   `(corfu-bar ((,class (:background ,fg))))
+   `(corfu-border ((,class (:background ,fg))))
    `(corfu-current ((,class (:inherit highlight))))))
 
 ;;;###autoload
