@@ -56,19 +56,24 @@ Zmacs and Smalltalk-80"
 (let ((class '((class color) (min-colors 89)))
       (bg    (if tok-theme-dark "black" "white"))
       (fg    (if tok-theme-dark "white" "black"))
-      (dim-1 (if tok-theme-dark "grey20" "grey90"))
-      (dim-2 (if tok-theme-dark "grey30" "grey80"))
-      (dim-3 (if tok-theme-dark "grey40" "grey70"))
-      (dim-4 (if tok-theme-dark "grey50" "grey60"))
-      (dim-5 (if tok-theme-dark "grey60" "grey50")))
+      (dim-1 (if tok-theme-dark "grey15" "grey90"))
+      (dim-2 (if tok-theme-dark "grey25" "grey80"))
+      (dim-3 (if tok-theme-dark "grey35" "grey70"))
+      (dim-4 (if tok-theme-dark "grey45" "grey60"))
+      (dim-5 (if tok-theme-dark "grey55" "grey50")))
   (custom-theme-set-faces
    'tok
 
    ;; Basic faces
-   `(default ((,class (:foreground ,fg :background ,bg))))
-   `(cursor ((,class (:background ,fg))))
+
+   ;; Let terminal to define these.
+   (when (display-graphic-p)
+     `(default ((,class (:foreground ,fg :background ,bg)))))
+   (when (display-graphic-p) ; Have to call `when' here due to reasons...
+     `(cursor ((,class (:background ,fg)))))
+
    `(highlight ((,class (:background ,dim-1))))
-   `(region ((,class (:extend t :background ,dim-1))))
+   `(region ((,class (:extend t :background ,dim-2))))
    `(secondary-selection ((,class (:inherit region))))
    `(trailing-whitespace ((,class (:underline t))))
    `(error ((,class (:weight bold :foreground "red"))))
@@ -81,7 +86,7 @@ Zmacs and Smalltalk-80"
    `(link ((,class (:underline t))))
 
    ;; Line-numbes
-   `(line-number ((,class (:foreground ,dim-3))))
+   `(line-number ((,class (:foreground ,dim-2))))
    `(line-number-current-line ((,class (:foreground ,fg :background ,dim-1))))
 
    ;; Mode-line
