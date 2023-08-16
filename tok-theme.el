@@ -90,9 +90,9 @@ Zmacs and Smalltalk-80"
    `(line-number-current-line ((,class (:foreground ,fg :background ,dim-1))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground ,fg :background ,bg :box 1))))
+   `(mode-line ((,class (:foreground ,fg :background ,bg :box ,fg))))
    `(mode-line-active ((,class (:inherit mode-line))))
-   `(mode-line-inactive ((,class (:weight light :background ,dim-1 :box 1))))
+   `(mode-line-inactive ((,class (:weight light :background ,dim-1))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
