@@ -146,7 +146,7 @@ Zmacs and Smalltalk-80"
    `(outline-8 ((,class (:inherit outline-1))))
 
    ;; Show paren
-   `(show-paren-match ((,class (:weight bold :background ,dim-2))))
+   `(show-paren-match ((,class (:weight bold :background ,dim-5))))
    `(show-paren-match-expression ((,class (:inherit show-paren-match))))
    `(show-paren-mismatch ((,class (:inherit error))))
 
