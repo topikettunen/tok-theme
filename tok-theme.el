@@ -165,16 +165,10 @@ Zmacs and Smalltalk-80"
    ;; Magit
    `(magit-diff-file-heading ((,class (nil))))
    `(magit-section-heading ((,class (:weight bold))))
-   ;;
-   ;; Let Magit decide based on whether the `background-mode' is light or
-   ;; dark.
-   ;;
-   ;; `(magit-diff-added ((,class (:extend t :background "#ddffdd"))))
-   ;; `(magit-diff-added-highlight ((,class (:extend t :background "#cceecc"))))
-   ;; `(magit-diff-removed ((,class (:extend t :background "#ffdddd"))))
-   ;; `(magit-diff-removed-highlight ((,class (:extend t :background "#eecccc"))))
+   `(magit-diff-added ((,class (:extend t :foreground "green3"))))
+   `(magit-diff-removed ((,class (:extend t :foreground "red3"))))
 
-   ;; Completions
+   ;; completions
    `(completions-common-part ((,class (:weight bold))))
    `(completions-first-difference ((,class (nil))))
 
