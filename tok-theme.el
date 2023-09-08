@@ -49,8 +49,8 @@
   :type 'boolean)
 
 (deftheme tok
-  "Minimal monochromatic theme for Emacs in the spirit of
-Zmacs and Smalltalk-80"
+  "Minimal monochromatic theme for Emacs in the spirit of Zmacs and
+Smalltalk-80"
   :kind 'color-scheme)
 
 (let ((class '((class color) (min-colors 89)))
@@ -165,8 +165,7 @@ Zmacs and Smalltalk-80"
    ;; Magit
    `(magit-diff-file-heading ((,class (nil))))
    `(magit-section-heading ((,class (:weight bold))))
-   `(magit-diff-added ((,class (:extend t :foreground "green3"))))
-   `(magit-diff-removed ((,class (:extend t :foreground "red3"))))
+
 
    ;; completions
    `(completions-common-part ((,class (:weight bold))))
