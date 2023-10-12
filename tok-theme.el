@@ -109,7 +109,7 @@ Smalltalk-80"
    `(font-lock-variable-name-face ((,class (nil))))
    `(font-lock-type-face ((,class (nil))))
    `(font-lock-constant-face ((,class (nil))))
-   `(font-lock-warning-face ((,class (nil))))
+   `(font-lock-warning-face ((,class (:inherit error))))
    `(font-lock-negation-char-face ((,class (nil))))
    `(font-lock-preprocessor-face ((,class (:weight bold))))
    `(font-lock-regexp-grouping-backslash ((,class (nil))))
