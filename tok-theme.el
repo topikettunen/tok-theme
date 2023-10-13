@@ -79,10 +79,10 @@ Smalltalk-80"
    `(error ((,class (:weight bold :foreground "red"))))
    `(warning ((,class (:weight bold :foreground "orange"))))
    `(success ((,class (:weight bold :foreground "green"))))
-   `(fringe ((,class (nil))))
+   `(fringe ((t (nil))))
    `(button ((,class (:box 1))))
    `(vertical-border ((,class (:foreground ,fg))))
-   `(minibuffer-prompt ((,class (nil))))
+   `(minibuffer-prompt ((t (nil))))
    `(link ((,class (:underline t))))
 
    ;; Line-numbes
@@ -100,20 +100,20 @@ Smalltalk-80"
    ;; Font-lock
    `(font-lock-comment-face ((,class (:foreground ,dim-4))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((,class (:background ,dim-1))))
+   `(font-lock-string-face ((t (nil))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-doc-markup-face ((,class (nil))))
-   `(font-lock-keyword-face ((,class (nil))))
-   `(font-lock-builtin-face ((,class (nil))))
-   `(font-lock-function-name-face ((,class (nil))))
-   `(font-lock-variable-name-face ((,class (nil))))
-   `(font-lock-type-face ((,class (nil))))
-   `(font-lock-constant-face ((,class (nil))))
+   `(font-lock-doc-markup-face ((t (nil))))
+   `(font-lock-keyword-face ((t (nil))))
+   `(font-lock-builtin-face ((t (nil))))
+   `(font-lock-function-name-face ((t (nil))))
+   `(font-lock-variable-name-face ((t (nil))))
+   `(font-lock-type-face ((t (nil))))
+   `(font-lock-constant-face ((t (nil))))
    `(font-lock-warning-face ((,class (:inherit error))))
-   `(font-lock-negation-char-face ((,class (nil))))
+   `(font-lock-negation-char-face ((t (nil))))
    `(font-lock-preprocessor-face ((,class (:weight bold))))
-   `(font-lock-regexp-grouping-backslash ((,class (nil))))
-   `(font-lock-regexp-grouping-construct ((,class (nil))))
+   `(font-lock-regexp-grouping-backslash ((t (nil))))
+   `(font-lock-regexp-grouping-construct ((t (nil))))
 
    ;; isearch
    `(isearch ((,class (:foreground ,bg :background ,fg))))
@@ -126,14 +126,14 @@ Smalltalk-80"
    `(dired-broken-symlink ((,class (:inherit error))))
 
    ;; ERC
-   `(erc-timestamp-face ((,class (nil))))
+   `(erc-timestamp-face ((t (nil))))
 
    ;; sh
-   `(sh-heredoc ((,class (nil))))
-   `(sh-quoted-exec ((,class (nil))))
+   `(sh-heredoc ((t (nil))))
+   `(sh-quoted-exec ((t (nil))))
 
    ;; Org
-   `(org-block ((,class (nil))))
+   `(org-block ((t (nil))))
 
    ;; Outline
    `(outline-1 ((,class (:weight bold))))
@@ -151,25 +151,25 @@ Smalltalk-80"
    `(show-paren-mismatch ((,class (:inherit error))))
 
    ;; Terraform
-   `(terraform--resource-name-face ((,class (nil))))
-   `(terraform--resource-type-face ((,class (nil))))
+   `(terraform--resource-name-face ((t (nil))))
+   `(terraform--resource-type-face ((t (nil))))
 
    ;; Markdown
    `(markdown-header-face ((,class (:inherit outline-1))))
-   `(markdown-header-delimiter-face ((,class (nil))))
+   `(markdown-header-delimiter-face ((t (nil))))
    `(markdown-metadata-key-face ((,class (:inherit font-lock-comment-face))))
    `(markdown-metadata-value-face ((,class (:inherit font-lock-comment-face))))
-   `(markdown-blockquote-face ((,class (nil))))
-   `(markdown-pre-face ((,class (nil))))
+   `(markdown-blockquote-face ((t (nil))))
+   `(markdown-pre-face ((t (nil))))
 
    ;; Magit
-   `(magit-diff-file-heading ((,class (nil))))
+   `(magit-diff-file-heading ((t (nil))))
    `(magit-section-heading ((,class (:weight bold))))
 
 
    ;; completions
    `(completions-common-part ((,class (:weight bold))))
-   `(completions-first-difference ((,class (nil))))
+   `(completions-first-difference ((t (nil))))
 
    ;; Corfu
    `(corfu-default ((,class (:background ,bg))))
