@@ -103,7 +103,7 @@ Smalltalk-80"
    `(font-lock-string-face ((t (nil))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
    `(font-lock-doc-markup-face ((t (nil))))
-   `(font-lock-keyword-face ((t (nil))))
+   `(font-lock-keyword-face ((,class (:weight bold))))
    `(font-lock-builtin-face ((t (nil))))
    `(font-lock-function-name-face ((t (nil))))
    `(font-lock-variable-name-face ((t (nil))))
