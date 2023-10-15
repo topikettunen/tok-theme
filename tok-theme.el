@@ -74,7 +74,7 @@ Smalltalk-80"
 
    `(highlight ((,class (:background ,dim-1))))
    `(region ((,class (:extend t :background ,dim-2))))
-   `(secondary-selection ((,class (:inherit region))))
+   `(secondary-selection ((,class (:extend t :background ,dim-3))))
    `(trailing-whitespace ((,class (:underline t))))
    `(error ((,class (:weight bold :foreground "red"))))
    `(warning ((,class (:weight bold :foreground "orange"))))
@@ -133,7 +133,10 @@ Smalltalk-80"
    `(sh-quoted-exec ((t (nil))))
 
    ;; Org
+   `(org-agenda-structure ((t (nil))))
    `(org-block ((t (nil))))
+   `(org-headline-done ((t (nil))))
+   `(org-special-keyword ((,class (:foreground ,dim-5))))
 
    ;; Outline
    `(outline-1 ((,class (:weight bold))))
@@ -165,7 +168,10 @@ Smalltalk-80"
    ;; Magit
    `(magit-diff-file-heading ((t (nil))))
    `(magit-section-heading ((,class (:weight bold))))
-
+   `(magit-diff-removed ((,class (:extend t "#" :background "#ffdddd"))))
+   `(magit-diff-added ((,class (:extend t :background "#ddffdd"))))
+   `(magit-diff-removed-highlight ((,class (:extend t :background "#eecccc"))))
+   `(magit-diff-added-highlight ((,class (:extend t :background "#cceecc"))))
 
    ;; completions
    `(completions-common-part ((,class (:weight bold))))
