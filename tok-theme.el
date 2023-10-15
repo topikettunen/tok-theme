@@ -73,8 +73,6 @@ Smalltalk-80"
      `(cursor ((,class (:background ,fg)))))
 
    `(highlight ((,class (:background ,dim-1))))
-   `(region ((,class (:extend t :background ,dim-2))))
-   `(secondary-selection ((,class (:extend t :background ,dim-3))))
    `(trailing-whitespace ((,class (:underline t))))
    `(error ((,class (:weight bold :foreground "red"))))
    `(warning ((,class (:weight bold :foreground "orange"))))
@@ -147,11 +145,6 @@ Smalltalk-80"
    `(outline-6 ((,class (:inherit outline-1))))
    `(outline-7 ((,class (:inherit outline-1))))
    `(outline-8 ((,class (:inherit outline-1))))
-
-   ;; Show paren
-   `(show-paren-match ((,class (:weight bold :background ,dim-5))))
-   `(show-paren-match-expression ((,class (:inherit show-paren-match))))
-   `(show-paren-mismatch ((,class (:inherit error))))
 
    ;; Terraform
    `(terraform--resource-name-face ((t (nil))))
