@@ -161,10 +161,6 @@ Smalltalk-80"
    ;; Magit
    `(magit-diff-file-heading ((t (nil))))
    `(magit-section-heading ((,class (:weight bold))))
-   `(magit-diff-removed ((,class (:extend t :background "#ffdddd"))))
-   `(magit-diff-added ((,class (:extend t :background "#ddffdd"))))
-   `(magit-diff-removed-highlight ((,class (:extend t :background "#eecccc"))))
-   `(magit-diff-added-highlight ((,class (:extend t :background "#cceecc"))))
 
    ;; completions
    `(completions-common-part ((,class (:weight bold))))
