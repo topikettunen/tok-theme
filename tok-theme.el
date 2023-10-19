@@ -74,6 +74,8 @@ Smalltalk-80"
 
    `(highlight ((,class (:background ,dim-1))))
    `(trailing-whitespace ((,class (:underline t))))
+   `(region ((,class (:extend t :background ,dim-2))))
+   `(secondary-selection ((,class (:inherit region))))
    `(error ((,class (:weight bold :foreground "red"))))
    `(warning ((,class (:weight bold :foreground "orange"))))
    `(success ((,class (:weight bold :foreground "green"))))
