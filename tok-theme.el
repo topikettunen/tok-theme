@@ -81,7 +81,7 @@ Smalltalk-80"
    `(success ((,class (:weight bold :foreground "green"))))
    `(fringe ((t (nil))))
    `(button ((,class (:box 1))))
-   `(vertical-border ((,class (:foreground ,fg))))
+   `(vertical-border ((,class (:foreground ,dim-2))))
    `(minibuffer-prompt ((t (nil))))
    `(link ((,class (:underline t))))
 
@@ -90,9 +90,9 @@ Smalltalk-80"
    `(line-number-current-line ((,class (:foreground ,fg :background ,dim-1))))
 
    ;; Mode-line
-   `(mode-line ((,class (:foreground ,fg :background ,bg :box ,fg))))
+   `(mode-line ((,class (:foreground ,fg :background ,bg :box (:line-width -1 :style released-button)))))
    `(mode-line-active ((,class (:inherit mode-line))))
-   `(mode-line-inactive ((,class (:weight light :foreground ,dim-5 :background ,dim-1 :box ,dim-5))))
+   `(mode-line-inactive ((,class (:weight light :foreground ,dim-5 :background ,bg :box (:line-width -1 :color ,dim-1 :style nil)))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-buffer-id ((,class (:weight bold))))
@@ -103,7 +103,7 @@ Smalltalk-80"
    `(font-lock-string-face ((t (nil))))
    `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
    `(font-lock-doc-markup-face ((t (nil))))
-   `(font-lock-keyword-face ((,class (:weight bold))))
+   `(font-lock-keyword-face ((t (nil))))
    `(font-lock-builtin-face ((t (nil))))
    `(font-lock-function-name-face ((t (nil))))
    `(font-lock-variable-name-face ((t (nil))))
