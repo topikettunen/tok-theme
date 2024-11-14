@@ -6,7 +6,9 @@ Minimal light monochromatic theme for Emacs in the spirit of Zmacs and
 Smalltalk-80. Simple syntax highlighting and minimal colouring for things such
 as `diff/magit` patches.
 
-![Screenshot of the theme](/screenshot.png)
+![Screenshot of the light theme](/tok-theme-light.png)
+
+![Screenshot of the dark theme](/tok-theme-dark.png)
 
 ## Installation
 
