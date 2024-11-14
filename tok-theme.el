@@ -53,14 +53,15 @@
 Smalltalk-80"
   :kind 'color-scheme)
 
-(let ((class '((class color) (min-colors 89)))
-      (bg    (if tok-theme-dark "black" "white"))
-      (fg    (if tok-theme-dark "white" "black"))
-      (dim-1 (if tok-theme-dark "grey15" "grey90"))
-      (dim-2 (if tok-theme-dark "grey25" "grey80"))
-      (dim-3 (if tok-theme-dark "grey35" "grey70"))
-      (dim-4 (if tok-theme-dark "grey45" "grey60"))
-      (dim-5 (if tok-theme-dark "grey55" "grey50")))
+(let* ((class '((class color) (min-colors 89)))
+       (bg    (if tok-theme-dark "black" "white"))
+       (fg    (if tok-theme-dark "white" "black"))
+       (dim-1 (if tok-theme-dark "grey15" "grey90"))
+       (dim-2 (if tok-theme-dark "grey25" "grey80"))
+       (dim-3 (if tok-theme-dark "grey35" "grey70"))
+       (dim-4 (if tok-theme-dark "grey45" "grey60"))
+       (dim-5 (if tok-theme-dark "grey55" "grey50"))
+       (string (if tok-theme-dark "grey70" "grey30")))
   (custom-theme-set-faces
    'tok
 
@@ -98,10 +99,10 @@ Smalltalk-80"
    `(mode-line-buffer-id ((,class (:weight bold))))
 
    ;; Font-lock
-   `(font-lock-comment-face ((,class (:foreground ,dim-4))))
+   `(font-lock-comment-face ((,class (:italic t :foreground ,dim-4))))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
-   `(font-lock-string-face ((t (nil))))
-   `(font-lock-doc-face ((,class (:inherit font-lock-comment-face))))
+   `(font-lock-string-face ((,class (:italic t :foreground ,string))))
+   `(font-lock-doc-face ((,class (:italic t :foreground ,dim-5))))
    `(font-lock-doc-markup-face ((t (nil))))
    `(font-lock-keyword-face ((t (nil))))
    `(font-lock-builtin-face ((t (nil))))
