@@ -50,6 +50,21 @@ before loading theme:
 (load-theme 'tok)
 ```
 
+Or you can toggle between the dark and the light modes on the fly.
+
+e.g.
+
+``` elisp
+(use-package tok-theme
+  :ensure t
+  :demand t
+  :bind (("<f5>" . tok-theme-toggle)) ;; toggle
+  :custom
+  (tok-theme-dark t) ;; dark mode by default
+  :config
+  (load-theme 'tok nil))
+```
+
 ## Contributing
 
 I like to keep my own `.emacs.d` relatively clean so there might be
