@@ -92,7 +92,7 @@ Smalltalk-80"
 
    ;; Mode-line
    `(mode-line ((,class (:foreground ,fg :background ,bg :box (:line-width -1 :style released-button)))))
-   `(mode-line-active ((,class (:inherit mode-line))))
+   `(mode-line-active ((,class (:inherit mode-line :background ,dim-1))))
    `(mode-line-inactive ((,class (:weight light :foreground ,dim-5 :background ,bg :box (:line-width -1 :color ,dim-1 :style nil)))))
    `(mode-line-highlight ((t (nil))))
    `(mode-line-emphasis ((,class (:weight bold))))
