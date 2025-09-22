@@ -43,25 +43,20 @@
   "Options for tok-theme."
   :group 'faces)
 
-(defcustom tok-theme-dark nil
-  "If non-nil, make the theme dark."
-  :group 'tok-theme
-  :type 'boolean)
-
 (deftheme tok
   "Minimal monochromatic theme for Emacs in the spirit of Zmacs and
 Smalltalk-80"
   :kind 'color-scheme)
 
 (let* ((class '((class color) (min-colors 89)))
-       (bg    (if tok-theme-dark "black" "white"))
-       (fg    (if tok-theme-dark "white" "black"))
-       (dim-1 (if tok-theme-dark "grey15" "grey90"))
-       (dim-2 (if tok-theme-dark "grey25" "grey80"))
-       (dim-3 (if tok-theme-dark "grey35" "grey70"))
-       (dim-4 (if tok-theme-dark "grey45" "grey60"))
-       (dim-5 (if tok-theme-dark "grey55" "grey50"))
-       (string (if tok-theme-dark "grey70" "grey30")))
+       (bg    "white")
+       (fg    "black")
+       (dim-1 "grey90")
+       (dim-2 "grey80")
+       (dim-3 "grey70")
+       (dim-4 "grey60")
+       (dim-5 "grey50")
+       (string "grey30"))
   (custom-theme-set-faces
    'tok
 
