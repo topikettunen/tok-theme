@@ -2,11 +2,9 @@
 
 [![MELPA](https://melpa.org/packages/tok-theme-badge.svg)](https://melpa.org/#/tok-theme)
 
-Minimal light monochromatic theme for Emacs in the spirit of Zmacs and
-Smalltalk-80. Simple syntax highlighting and minimal colouring for things such
-as `diff/magit` patches.
+Minimal monochromatic theme with restrained color highlights.
 
-![Screenshot of the light theme](/tok-theme-light.png)
+![Screenshot of the theme](/tok-theme.png)
 
 ## Installation
 
