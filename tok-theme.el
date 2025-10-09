@@ -64,7 +64,7 @@ Smalltalk-80"
    `(completions-first-difference ((t nil)))
    `(corfu-bar ((,class (:background ,fg))))
    `(corfu-border ((,class (:background ,fg))))
-   `(corfu-current ((,class (:inherit highlight))))))
+   `(corfu-current ((,class (:inherit highlight))))
    `(corfu-default ((,class (:background ,bg))))
    `(cursor ((,class (:background ,fg))))
    `(default ((,class (:foreground ,fg :background ,bg))))
@@ -133,13 +133,13 @@ Smalltalk-80"
    `(terraform--resource-type-face ((t nil)))
    `(trailing-whitespace ((,class (:underline t))))
    `(vertical-border ((,class (:foreground ,dim-2))))
-   `(warning ((,class (:weight bold :foreground "orange"))))
+   `(warning ((,class (:weight bold :foreground "orange"))))))
 
 ;;;###autoload
-(when (and (boundp 'custom-theme-load-path) load-file-name)
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
+   (when (and (boundp 'custom-theme-load-path) load-file-name)
+     (add-to-list 'custom-theme-load-path
+                  (file-name-as-directory (file-name-directory load-file-name))))
 
-(provide-theme 'tok)
+   (provide-theme 'tok)
 
 ;;; tok-theme.el ends here
