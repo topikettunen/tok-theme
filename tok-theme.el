@@ -47,16 +47,16 @@
 Smalltalk-80"
   :kind 'color-scheme)
 
-(let* ((class '((class color) (min-colors 89)))
-       ;; TOK color palette
-       (bg    "white")
-       (fg    "black")
-       (dim-0 "grey95")
-       (dim-1 "grey90")
-       (dim-2 "grey80")
-       (dim-3 "grey70")
-       (dim-4 "grey60")
-       (dim-5 "grey50"))
+(let ((class '((class color) (min-colors 89)))
+      ;; TOK color palette
+      (bg    "white")
+      (fg    "black")
+      (dim-0 "grey95")
+      (dim-1 "grey90")
+      (dim-2 "grey80")
+      (dim-3 "grey70")
+      (dim-4 "grey60")
+      (dim-5 "grey50"))
   (custom-theme-set-faces
    'tok
    `(button ((,class (:box 1))))
