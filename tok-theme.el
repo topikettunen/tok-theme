@@ -128,6 +128,7 @@ Smalltalk-80"
    `(secondary-selection ((,class (:inherit region))))
    `(sh-heredoc ((t nil)))
    `(sh-quoted-exec ((t nil)))
+   `(slime-repl-output-mouseover-face ((,class (:inherit slime-repl-inputed-output-face))))
    `(success ((,class (:weight bold :foreground "green"))))
    `(terraform--resource-name-face ((t nil)))
    `(terraform--resource-type-face ((t nil)))
