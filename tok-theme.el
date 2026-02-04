@@ -42,21 +42,25 @@
   "Options for tok-theme."
   :group 'faces)
 
+(defcustom tok-theme-dark nil
+  "If non-nil, make the theme dark."
+  :group 'tok-theme
+  :type 'boolean)
+
 (deftheme tok
   "Minimal monochromatic theme for Emacs in the spirit of Zmacs and
 Smalltalk-80"
   :kind 'color-scheme)
 
-(let ((class '((class color) (min-colors 89)))
-      ;; TOK color palette
-      (bg    "white")
-      (fg    "black")
-      (dim-0 "grey95")
-      (dim-1 "grey90")
-      (dim-2 "grey80")
-      (dim-3 "grey70")
-      (dim-4 "grey60")
-      (dim-5 "grey50"))
+(let* ((class '((class color) (min-colors 89)))
+       (bg    (if tok-theme-dark "black" "white"))
+       (fg    (if tok-theme-dark "white" "black"))
+       (dim-1 (if tok-theme-dark "grey15" "grey90"))
+       (dim-2 (if tok-theme-dark "grey25" "grey80"))
+       (dim-3 (if tok-theme-dark "grey35" "grey70"))
+       (dim-4 (if tok-theme-dark "grey45" "grey60"))
+       (dim-5 (if tok-theme-dark "grey55" "grey50"))
+       (string (if tok-theme-dark "grey70" "grey30")))
   (custom-theme-set-faces
    'tok
    `(button ((,class (:box 1))))
@@ -73,8 +77,8 @@ Smalltalk-80"
    `(erc-timestamp-face ((t nil)))
    `(error ((,class (:weight bold :foreground "red"))))
    `(font-lock-builtin-face ((t nil)))
-   `(font-lock-comment-delimiter-face ((t nil)))
-   `(font-lock-comment-face ((t nil)))
+   `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
+   `(font-lock-comment-face ((,class (:italic t :foreground ,dim-4))))
    `(font-lock-constant-face ((t nil)))
    `(font-lock-doc-face ((t nil)))
    `(font-lock-doc-markup-face ((t nil)))
@@ -84,12 +88,12 @@ Smalltalk-80"
    `(font-lock-preprocessor-face ((t nil)))
    `(font-lock-regexp-grouping-backslash ((t nil)))
    `(font-lock-regexp-grouping-construct ((t nil)))
-   `(font-lock-string-face ((t nil)))
+   `(font-lock-string-face ((,class (:italic t :foreground ,string))))
    `(font-lock-type-face ((t nil)))
    `(font-lock-variable-name-face ((t nil)))
    `(font-lock-warning-face ((t nil)))
    `(fringe ((t nil)))
-   `(highlight ((,class (:background ,dim-0))))
+   `(highlight ((,class (:background ,dim-1))))
    `(isearch ((,class (:foreground ,bg :background ,fg))))
    `(isearch-group-1 ((,class (:background ,dim-5))))
    `(isearch-group-2 ((,class (:background ,dim-4))))
@@ -111,7 +115,7 @@ Smalltalk-80"
    `(mode-line-buffer-id ((,class (:weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-highlight ((t nil)))
-   `(mode-line-inactive ((,class (:weight light :foreground ,dim-5 :background ,dim-0 :box (:line-width -1 :color ,dim-1 :style nil)))))
+   `(mode-line-inactive ((,class (:weight light :foreground ,dim-5 :background ,dim-1 :box (:line-width -1 :color ,dim-1 :style nil)))))
    `(org-agenda-structure ((t nil)))
    `(org-block ((t nil)))
    `(org-headline-done ((t nil)))
@@ -124,7 +128,7 @@ Smalltalk-80"
    `(outline-6 ((,class (:inherit outline-1))))
    `(outline-7 ((,class (:inherit outline-1))))
    `(outline-8 ((,class (:inherit outline-1))))
-   `(region ((,class (:extend t :background "lightgoldenrod1"))))
+   `(region ((,class (:extend t :background ,dim-2))))
    `(secondary-selection ((,class (:inherit region))))
    `(sh-heredoc ((t nil)))
    `(sh-quoted-exec ((t nil)))
