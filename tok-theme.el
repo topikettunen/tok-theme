@@ -141,6 +141,15 @@ Smalltalk-80"
    `(warning ((,class (:weight bold :foreground "orange"))))))
 
 ;;;###autoload
+(defun tok-theme-toggle ()
+  (interactive)
+  (progn
+    (setq tok-theme-dark (not tok-theme-dark))
+    ;; disable other themes first
+    (mapc #'disable-theme custom-enabled-themes)
+    (load-theme 'tok t)))
+
+;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
