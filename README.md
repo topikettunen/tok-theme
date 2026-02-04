@@ -6,6 +6,8 @@ Minimal monochromatic theme with restrained color highlights.
 
 ![Screenshot of the theme](/tok-theme.png)
 
+![Screenshot of the dark theme](/tok-theme-dark.png)
+
 ## Installation
 
 ### MELPA
@@ -34,6 +36,16 @@ Or with `use-package`:
   :config
   (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/tok-theme")
   (load-theme 'tok t))
+```
+
+### Dark mode
+
+If you want to use dark variant of theme, you can set `tok-theme-dark` to true
+before loading theme:
+
+``` elisp
+(setq tok-theme-dark t)
+(load-theme 'tok)
 ```
 
 ## Contributing
