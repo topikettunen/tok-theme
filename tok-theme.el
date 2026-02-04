@@ -1,8 +1,8 @@
-;;; tok-theme.el --- Minimal monochromatic theme for Emacs in the spirit of Zmacs and Smalltalk-80. -*- lexical-binding: t; -*-
+;;; tok-theme.el --- Minimal monochromatic theme with restrained color highlights. -*- lexical-binding: t; -*-
 
 ;; Author: Topi Kettunen <topi@topikettunen.com>
 ;; URL: https://github.com/topikettunen/tok-theme
-;; Version: 0.1
+;; Version: 0.3
 ;; Package-Requires: ((emacs "27.0"))
 
 ;; This is free and unencumbered software released into the public domain.
@@ -34,8 +34,7 @@
 
 ;;; Commentary:
 
-;; Tok is a minimal monochromatic theme for Emacs in the spirit
-;; of Zmacs and Smalltalk-80.
+;; tok-theme is a minimal monochromatic theme with restrained color highlights.
 
 ;;; Code:
 
@@ -64,82 +63,63 @@ Smalltalk-80"
        (string (if tok-theme-dark "grey70" "grey30")))
   (custom-theme-set-faces
    'tok
-
-   ;; Basic faces
-
-   ;; Let terminal to define these.
-   (when (display-graphic-p)
-     `(default ((,class (:foreground ,fg :background ,bg)))))
-   (when (display-graphic-p) ; Have to call `when' here due to reasons...
-     `(cursor ((,class (:background ,fg)))))
-
-   `(highlight ((,class (:background ,dim-1))))
-   `(trailing-whitespace ((,class (:underline t))))
-   `(region ((,class (:extend t :background ,dim-2))))
-   `(secondary-selection ((,class (:inherit region))))
-   `(error ((,class (:weight bold :foreground "red"))))
-   `(warning ((,class (:weight bold :foreground "orange"))))
-   `(success ((,class (:weight bold :foreground "green"))))
-   `(fringe ((t (nil))))
    `(button ((,class (:box 1))))
-   `(vertical-border ((,class (:foreground ,dim-2))))
-   `(minibuffer-prompt ((t (nil))))
-   `(link ((,class (:underline t))))
-
-   ;; Line-numbes
-   `(line-number ((,class (:foreground ,dim-2))))
-   `(line-number-current-line ((,class (:foreground ,fg :background ,dim-1))))
-
-   ;; Mode-line
-   `(mode-line ((,class (:foreground ,fg :background ,bg :box (:line-width -1 :style released-button)))))
-   `(mode-line-active ((,class (:inherit mode-line :background ,dim-1))))
-   `(mode-line-inactive ((,class (:weight light :foreground ,dim-5 :background ,bg :box (:line-width -1 :color ,dim-1 :style nil)))))
-   `(mode-line-highlight ((t (nil))))
-   `(mode-line-emphasis ((,class (:weight bold))))
-   `(mode-line-buffer-id ((,class (:weight bold))))
-
-   ;; Font-lock
-   `(font-lock-comment-face ((,class (:italic t :foreground ,dim-4))))
+   `(completions-common-part ((,class (:weight bold))))
+   `(completions-first-difference ((t nil)))
+   `(corfu-bar ((,class (:background ,fg))))
+   `(corfu-border ((,class (:background ,fg))))
+   `(corfu-current ((,class (:inherit highlight))))
+   `(corfu-default ((,class (:background ,bg))))
+   `(cursor ((,class (:background ,fg))))
+   `(default ((,class (:foreground ,fg :background ,bg))))
+   `(dired-broken-symlink ((,class (:inherit error))))
+   `(dired-directory ((,class (:weight bold))))
+   `(erc-timestamp-face ((t nil)))
+   `(error ((,class (:weight bold :foreground "red"))))
+   `(font-lock-builtin-face ((t nil)))
    `(font-lock-comment-delimiter-face ((,class (:inherit font-lock-comment-face))))
+   `(font-lock-comment-face ((,class (:italic t :foreground ,dim-4))))
+   `(font-lock-constant-face ((t nil)))
+   `(font-lock-doc-face ((t nil)))
+   `(font-lock-doc-markup-face ((t nil)))
+   `(font-lock-function-name-face ((t nil)))
+   `(font-lock-keyword-face ((t nil)))
+   `(font-lock-negation-char-face ((t nil)))
+   `(font-lock-preprocessor-face ((t nil)))
+   `(font-lock-regexp-grouping-backslash ((t nil)))
+   `(font-lock-regexp-grouping-construct ((t nil)))
    `(font-lock-string-face ((,class (:italic t :foreground ,string))))
-   `(font-lock-doc-face ((,class (:italic t :foreground ,dim-5))))
-   `(font-lock-doc-markup-face ((t (nil))))
-   `(font-lock-keyword-face ((t (nil))))
-   `(font-lock-builtin-face ((t (nil))))
-   `(font-lock-function-name-face ((t (nil))))
-   `(font-lock-variable-name-face ((t (nil))))
-   `(font-lock-type-face ((t (nil))))
-   `(font-lock-constant-face ((t (nil))))
-   `(font-lock-warning-face ((,class (:inherit error))))
-   `(font-lock-negation-char-face ((t (nil))))
-   `(font-lock-preprocessor-face ((,class (:weight bold))))
-   `(font-lock-regexp-grouping-backslash ((t (nil))))
-   `(font-lock-regexp-grouping-construct ((t (nil))))
-
-   ;; isearch
+   `(font-lock-type-face ((t nil)))
+   `(font-lock-variable-name-face ((t nil)))
+   `(font-lock-warning-face ((t nil)))
+   `(fringe ((t nil)))
+   `(highlight ((,class (:background ,dim-1))))
    `(isearch ((,class (:foreground ,bg :background ,fg))))
    `(isearch-group-1 ((,class (:background ,dim-5))))
    `(isearch-group-2 ((,class (:background ,dim-4))))
    `(lazy-highlight ((,class (:background ,dim-1))))
-
-   ;; Dired
-   `(dired-directory ((,class (:weight bold))))
-   `(dired-broken-symlink ((,class (:inherit error))))
-
-   ;; ERC
-   `(erc-timestamp-face ((t (nil))))
-
-   ;; sh
-   `(sh-heredoc ((t (nil))))
-   `(sh-quoted-exec ((t (nil))))
-
-   ;; Org
-   `(org-agenda-structure ((t (nil))))
-   `(org-block ((t (nil))))
-   `(org-headline-done ((t (nil))))
+   `(line-number ((,class (:foreground ,dim-2))))
+   `(line-number-current-line ((,class (:foreground ,fg :background ,dim-1))))
+   `(link ((,class (:underline t))))
+   `(magit-diff-file-heading ((t nil)))
+   `(magit-section-heading ((,class (:weight bold))))
+   `(markdown-blockquote-face ((t nil)))
+   `(markdown-header-delimiter-face ((t nil)))
+   `(markdown-header-face ((,class (:inherit outline-1))))
+   `(markdown-metadata-key-face ((,class (:inherit font-lock-comment-face))))
+   `(markdown-metadata-value-face ((,class (:inherit font-lock-comment-face))))
+   `(markdown-pre-face ((t nil)))
+   `(minibuffer-prompt ((t nil)))
+   `(mode-line ((,class (:foreground ,fg :background ,bg :box (:line-width -1 :style released-button)))))
+   `(mode-line-active ((,class (:inherit mode-line :background ,dim-1))))
+   `(mode-line-buffer-id ((,class (:weight bold))))
+   `(mode-line-emphasis ((,class (:weight bold))))
+   `(mode-line-highlight ((t nil)))
+   `(mode-line-inactive ((,class (:weight light :foreground ,dim-5 :background ,dim-1 :box (:line-width -1 :color ,dim-1 :style nil)))))
+   `(org-agenda-structure ((t nil)))
+   `(org-block ((t nil)))
+   `(org-headline-done ((t nil)))
    `(org-special-keyword ((,class (:foreground ,dim-5))))
-
-   ;; Outline
    `(outline-1 ((,class (:weight bold))))
    `(outline-2 ((,class (:inherit outline-1))))
    `(outline-3 ((,class (:inherit outline-1))))
@@ -148,32 +128,26 @@ Smalltalk-80"
    `(outline-6 ((,class (:inherit outline-1))))
    `(outline-7 ((,class (:inherit outline-1))))
    `(outline-8 ((,class (:inherit outline-1))))
+   `(region ((,class (:extend t :background ,dim-2))))
+   `(secondary-selection ((,class (:inherit region))))
+   `(sh-heredoc ((t nil)))
+   `(sh-quoted-exec ((t nil)))
+   `(slime-repl-output-mouseover-face ((,class (:inherit slime-repl-inputed-output-face))))
+   `(success ((,class (:weight bold :foreground "green"))))
+   `(terraform--resource-name-face ((t nil)))
+   `(terraform--resource-type-face ((t nil)))
+   `(trailing-whitespace ((,class (:underline t))))
+   `(vertical-border ((,class (:foreground ,dim-2))))
+   `(warning ((,class (:weight bold :foreground "orange"))))))
 
-   ;; Terraform
-   `(terraform--resource-name-face ((t (nil))))
-   `(terraform--resource-type-face ((t (nil))))
-
-   ;; Markdown
-   `(markdown-header-face ((,class (:inherit outline-1))))
-   `(markdown-header-delimiter-face ((t (nil))))
-   `(markdown-metadata-key-face ((,class (:inherit font-lock-comment-face))))
-   `(markdown-metadata-value-face ((,class (:inherit font-lock-comment-face))))
-   `(markdown-blockquote-face ((t (nil))))
-   `(markdown-pre-face ((t (nil))))
-
-   ;; Magit
-   `(magit-diff-file-heading ((t (nil))))
-   `(magit-section-heading ((,class (:weight bold))))
-
-   ;; completions
-   `(completions-common-part ((,class (:weight bold))))
-   `(completions-first-difference ((t (nil))))
-
-   ;; Corfu
-   `(corfu-default ((,class (:background ,bg))))
-   `(corfu-bar ((,class (:background ,fg))))
-   `(corfu-border ((,class (:background ,fg))))
-   `(corfu-current ((,class (:inherit highlight))))))
+;;;###autoload
+(defun tok-theme-toggle ()
+  (interactive)
+  (progn
+    (setq tok-theme-dark (not tok-theme-dark))
+    ;; disable other themes first
+    (mapc #'disable-theme custom-enabled-themes)
+    (load-theme 'tok t)))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)

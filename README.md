@@ -2,11 +2,9 @@
 
 [![MELPA](https://melpa.org/packages/tok-theme-badge.svg)](https://melpa.org/#/tok-theme)
 
-Minimal light monochromatic theme for Emacs in the spirit of Zmacs and
-Smalltalk-80. Simple syntax highlighting and minimal colouring for things such
-as `diff/magit` patches.
+Minimal monochromatic theme with restrained color highlights.
 
-![Screenshot of the light theme](/tok-theme-light.png)
+![Screenshot of the theme](/tok-theme-light.png)
 
 ![Screenshot of the dark theme](/tok-theme-dark.png)
 
@@ -48,6 +46,21 @@ before loading theme:
 ``` elisp
 (setq tok-theme-dark t)
 (load-theme 'tok)
+```
+
+Or you can toggle between the dark and the light modes on the fly.
+
+e.g.
+
+``` elisp
+(use-package tok-theme
+  :ensure t
+  :demand t
+  :bind (("<f5>" . tok-theme-toggle)) ;; toggle
+  :custom
+  (tok-theme-dark t) ;; dark mode by default
+  :config
+  (load-theme 'tok nil))
 ```
 
 ## Contributing
