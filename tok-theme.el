@@ -111,7 +111,7 @@ Smalltalk-80"
    `(markdown-pre-face ((t nil)))
    `(minibuffer-prompt ((t nil)))
    `(mode-line ((,class (:foreground ,fg :background ,bg :box (:line-width -1 :style released-button)))))
-   `(mode-line-active ((,class (:inherit mode-line))))
+   `(mode-line-active ((,class (:inherit mode-line :background ,dim-1))))
    `(mode-line-buffer-id ((,class (:weight bold))))
    `(mode-line-emphasis ((,class (:weight bold))))
    `(mode-line-highlight ((t nil)))
