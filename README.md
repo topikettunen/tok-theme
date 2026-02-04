@@ -4,7 +4,7 @@
 
 Minimal monochromatic theme with restrained color highlights.
 
-![Screenshot of the theme](/tok-theme.png)
+![Screenshot of the theme](/tok-theme-light.png)
 
 ![Screenshot of the dark theme](/tok-theme-dark.png)
 
